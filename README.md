@@ -46,18 +46,17 @@ Cours et exercices réalisés pendant la formation qualifiante de Concepteur Dé
 
 [C#-badge]: https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp
 
-- [![ASP.NET-badge] - Framework d'applications web de Microsoft pour la plate-forme .NET
+- ![ASP.NET-badge] - Framework d'applications web de Microsoft pour la plate-forme .NET
 
 [ASP.NET-badge]: https://img.shields.io/badge/ASP.NET-5C2D91?style=for-the-badge&logo=aspnet
 
-- [![MongoDB][MongoDB-badge]][MongoDB-url] - Base de données NoSQL
+- ![MongoDB-badge] - Base de données NoSQL
 
 [MongoDB-badge]: https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb
-[MongoDB-url]: }
-- [![MySQL][MySQL-badge]][MySQL-url] - Base de données relationnelle open-source
+
+- ![MySQL-badge] - Base de données relationnelle open-source
 
 [MySQL-badge]: https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql
-[MySQL-url]: }
 
 ### Contributors
 
