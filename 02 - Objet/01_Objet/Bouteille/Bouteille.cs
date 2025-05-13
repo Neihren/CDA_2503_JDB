@@ -40,7 +40,7 @@
 
         public override string ToString()
         {
-            return $"Bouteille[ isOpen : {this.isOpen}, capacityInL : {this.capacityInL}, amountFilledInL : {this.amountFilledInL} ]";
+            return $"Bouteille[ {nameof(isOpen)} : {this.isOpen}, capacityInL : {this.capacityInL}, amountFilledInL : {this.amountFilledInL} ]";
         }
 
         public bool Open()
