@@ -6,10 +6,10 @@
 *** Don't forget to give the project a star!
 -->
 
-<p align="center"><a href="https://github.com/luisvent/document_my_project/graphs/contributors"><img src="https://img.shields.io/github/contributors/luisvent/document_my_project.svg?style=for-the-badge" alt="Contributors"></a>
-        <a href="https://github.com/luisvent/document_my_project/network/members"><img src="https://img.shields.io/github/forks/luisvent/document_my_project.svg?style=for-the-badge" alt="Forks"></a>
-        <a href="https://github.com/luisvent/document_my_project/stargazers"><img src="https://img.shields.io/github/stars/luisvent/document_my_project.svg?style=for-the-badge" alt="Stargazers"></a>
-        <a href="https://github.com/luisvent/document_my_project/issues"><img src="https://img.shields.io/github/issues/luisvent/document_my_project.svg?style=for-the-badge" alt="Issues"></a></p><br/>
+<p align="center"><a href="https://github.com/Neihren/CDA_2503_JDB/graphs/contributors"><img src="https://img.shields.io/github/contributors/luisvent/document_my_project.svg?style=for-the-badge" alt="Contributors"></a>
+        <a href="https://github.com/Neihren/CDA_2503_JDB/network/members"><img src="https://img.shields.io/github/forks/luisvent/document_my_project.svg?style=for-the-badge" alt="Forks"></a>
+        <a href="https://github.com/Neihren/CDA_2503_JDB/stargazers"><img src="https://img.shields.io/github/stars/luisvent/document_my_project.svg?style=for-the-badge" alt="Stargazers"></a>
+        <a href="https://github.com/Neihren/CDA_2503_JDB/issues"><img src="https://img.shields.io/github/issues/luisvent/document_my_project.svg?style=for-the-badge" alt="Issues"></a></p><br/>
 
 
 <div align="center">
