@@ -18,11 +18,7 @@
 
         public Bouteille(bool isOpen, decimal capacityInL, decimal amountFilledInL)
         {
-            if (capacityInL < 0)
-            {
-                throw new ArgumentException("\nImpossible de mettre une valeur négative\n", nameof(amountFilledInL));
-            }
-            if (amountFilledInL < 0)
+            if (capacityInL < 0 || amountFilledInL < 0)
             {
                 throw new ArgumentException("\nImpossible de mettre une valeur négative\n", nameof(amountFilledInL));
             }
