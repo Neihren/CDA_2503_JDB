@@ -130,5 +130,10 @@
             this.amountFilledInL += amountToFill;
             return true;
         }
+
+        public decimal LToML()
+        {
+            return this.amountFilledInL * 1000;
+        }
     }
 }
