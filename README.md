@@ -59,6 +59,11 @@ Cours et exercices réalisés pendant la formation qualifiante de Concepteur Dé
 [MySQL-badge]: https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql
 [MySQL-url]: }
 
+### Contributors
+
+<a href="https://github.com/Neihren/CDA_2503_JDB/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Neihren/CDA_2503_JDB" />
+</a>
 
 ## 👨🏻‍ L'auteur
 
