@@ -2,14 +2,14 @@
 {
     public class Bouteille
     {
-        private bool isOpen { get; set; }
-        private decimal capacityInL { get; set; }
-        private decimal amountFilledInL { get; set; }
+        private bool isOpen;
+        private decimal capacityInL;
+        private decimal amountFilledInL;
 
         public Bouteille()
             : this(false, 0, 0)
         {
-
+        
         }
 
         public Bouteille(bool isOpen, decimal capacityInL, decimal amountFilledInL)
@@ -38,6 +38,21 @@
 
         }
 
+        public bool GetIsOpen()
+        {
+            return this.isOpen;
+        }
+
+        public decimal GetCapacityInL()
+        {
+            return this.capacityInL;
+        }
+
+        public decimal GetAmountFilledInL()
+        {
+            return this.amountFilledInL;
+        }
+
         public override string ToString()
         {
             return $"Bouteille[ {nameof(isOpen)} : {this.isOpen}, capacityInL : {this.capacityInL}, amountFilledInL : {this.amountFilledInL} ]";
@@ -49,7 +64,8 @@
             {
                 return false;
             }
-            return this.isOpen = true;
+            this.isOpen = true;
+            return true;
             
         }
 
@@ -59,7 +75,8 @@
             {
                 return false;
             }
-            return this.isOpen = false;
+            this.isOpen = false;
+            return true;
         }
 
         public bool Empty()
