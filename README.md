@@ -44,7 +44,7 @@ Cours et exercices réalisés pendant la formation qualifiante de Concepteur Dé
 ## 🛠 Technologies
 - ![C#-badge] - Langage de programmation orienté objet pour .Net framework
 
-//[C#-badge]: https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp
+[C#-badge]: https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp
 
 - [![ASP.NET][ASP.NET-badge]][ASP.NET-url] - Framework d'applications web de Microsoft pour la plate-forme .NET
 
