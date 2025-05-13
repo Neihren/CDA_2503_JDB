@@ -44,20 +44,6 @@ CDA au CRM68 - Session mars 2025 à novembre 2026
 Cours et exercices réalisés pendant la formation qualifiante de Concepteur Développeur d'Applications au CRM de Mulhouse.
 
 
-
-## 🏞 Showcase
-
- <center>
-
-<table>
-<tr>
-<td><a href=""><img width="320" src=""></a></td>
-<td></td>
-</tr>
-</table>
-
-</center>
-
 ## 🛠 Stack Tech
 - [![C#][C#-badge]][C#-url] - An object-oriented programming language for .NET framework
 
@@ -77,24 +63,11 @@ Cours et exercices réalisés pendant la formation qualifiante de Concepteur Dé
 [MySQL-url]: }
 
 
-## ⚙ ️Setup
-
-### Usage
-
-After installation, you can use the project by following these steps:
-
-1. Open the project directory in your code editor
-
-2. Run `npm run start` to start the development server
-
-
-
-
 ## 👨🏻‍ About the Author
 
 **Jessy DE BRITO**
 
-This project was created by Jessy DE BRITO. Connect with me on [GitHub](https://github.com/Neihren) and [LinkedIn](https://www.linkedin.com/in/luisvent/) to learn more about my projects and professional background.
+This project was created by Jessy DE BRITO. Connect with me on [GitHub](https://github.com/Neihren) to learn more about my projects and professional background.
 
 
 ## 📖 License
