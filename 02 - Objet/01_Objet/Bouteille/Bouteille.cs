@@ -65,16 +65,7 @@
 
         public bool Empty()
         {
-            if(!this.isOpen)
-            {
-                return false;
-            }
-            else if (this.amountFilledInL == 0)
-            {
-                return false;
-            }
-            this.amountFilledInL = 0;
-            return true;
+            return Empty(this.amountFilledInL);
         }
 
         public bool Empty(decimal amountToEmpty)
@@ -97,16 +88,7 @@
 
         public bool Fill()
         {
-            if (!this.isOpen)
-            {
-                return false;
-            }
-            if(this.amountFilledInL == this.capacityInL)
-            {
-                return false;
-            }
-            this.amountFilledInL = this.capacityInL;
-            return true;
+            return Fill(this.CapacityInL - this.amountFilledInL);
         }
 
         public bool Fill(decimal amountToFill)
