@@ -5,7 +5,9 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bouteille", "Bouteille\Bouteille.csproj", "{A01A1A42-0D9B-44E0-A56E-CA02FEE7280A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bouteille_main", "Bouteille_main\Bouteille_main.csproj", "{A8522718-FB07-4070-A991-F8DC8BE183BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bouteille_main", "Bouteille_main\Bouteille_main.csproj", "{A8522718-FB07-4070-A991-F8DC8BE183BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lepidoptere", "Lepidoptere\Lepidoptere.csproj", "{94B021ED-06E2-4B49-A7E3-8A74A9997CEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A8522718-FB07-4070-A991-F8DC8BE183BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8522718-FB07-4070-A991-F8DC8BE183BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8522718-FB07-4070-A991-F8DC8BE183BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94B021ED-06E2-4B49-A7E3-8A74A9997CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94B021ED-06E2-4B49-A7E3-8A74A9997CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94B021ED-06E2-4B49-A7E3-8A74A9997CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94B021ED-06E2-4B49-A7E3-8A74A9997CEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
