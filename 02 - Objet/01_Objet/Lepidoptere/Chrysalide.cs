@@ -35,7 +35,7 @@ namespace Lepi
         public override EtapeLepidoptere SeTransformer()
         {
             Console.WriteLine("Le Lepidoptere(Chrysalide) évolue en Papillion !");
-            return new Papillion();
+            return new Papillon();
         }
     }
 }

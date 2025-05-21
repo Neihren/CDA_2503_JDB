@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lepi
 {
-    public class Papillion : EtapeLepidoptere
+    public class Papillon : EtapeLepidoptere
     {
         private string couleur;
 
-        public Papillion()
+        public Papillon()
         {
             this.couleur = "bleu";
         }
@@ -19,12 +19,12 @@ namespace Lepi
 
         public override string ToString()
         {
-            return $"Papillion [couleur : {this.couleur}]";
+            return $"Papillon [couleur : {this.couleur}]";
         }
 
         public override string SeNourrir()
         {
-            return "Le Lepidoptere(Papillion) se nourrit de nectar.";
+            return "Le Lepidoptere(Papillon) se nourrit de nectar.";
         }
 
         public override string SeDeplacer()
@@ -34,8 +34,8 @@ namespace Lepi
 
         public override EtapeLepidoptere SeTransformer()
         {
-            Console.WriteLine("Le Lepidoptere(Papillion) meurt !");
-            return null;
+            Console.WriteLine("Le Lepidoptere(Papillon) est l'étape finale !");
+            return this;
         }
     }
 }
