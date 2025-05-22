@@ -36,7 +36,11 @@
 
         public string Modele { get => modele; }
         public Moteur Moteur { get => moteur; }
-        public Roue[] SesRoues { get => sesRoues; }
+        public Roue this[int key]
+        {
+            get => sesRoues[key];
+        }
+       // public Roue[] SesRoues { get => sesRoues; }
         public Roue RoueSecours { get => roueSecours; }
 
         public override string ToString()

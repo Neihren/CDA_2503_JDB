@@ -40,7 +40,5 @@ namespace Voit
             this.entrainDeTourner = true;
             return "les roues tournent";
         }
-
-        
     }
 }
