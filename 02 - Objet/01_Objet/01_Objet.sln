@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bouteille_main", "Bouteille
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lepi", "Lepidoptere\Lepi.csproj", "{94B021ED-06E2-4B49-A7E3-8A74A9997CEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lepidoptere_main", "Lepidoptere_main\Lepidoptere_main.csproj", "{9C171DAD-2B31-46DA-8D52-68A7B93AD496}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lepidoptere_main", "Lepidoptere_main\Lepidoptere_main.csproj", "{9C171DAD-2B31-46DA-8D52-68A7B93AD496}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Voit", "Voit\Voit.csproj", "{7C43131F-7871-4713-A9F6-1BC4E28C3F08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{9C171DAD-2B31-46DA-8D52-68A7B93AD496}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C171DAD-2B31-46DA-8D52-68A7B93AD496}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C171DAD-2B31-46DA-8D52-68A7B93AD496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C43131F-7871-4713-A9F6-1BC4E28C3F08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C43131F-7871-4713-A9F6-1BC4E28C3F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C43131F-7871-4713-A9F6-1BC4E28C3F08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C43131F-7871-4713-A9F6-1BC4E28C3F08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
