@@ -11,9 +11,19 @@ namespace Voit
         private int puissanceEnChevaux;
         private bool estEntrainDeTourner;
 
-        public Moteur()
+        public Moteur(int puissanceEnChevaux)
         {
-            this.puissanceEnChevaux = 110;
+            this.puissanceEnChevaux = puissanceEnChevaux;
+            this.estEntrainDeTourner = false;
+        }
+
+        public Moteur() : this(0)
+        {
+            this.estEntrainDeTourner = false;
+        }
+
+        public Moteur(Moteur moteurACloner) : this(moteurACloner.puissanceEnChevaux)
+        {
             this.estEntrainDeTourner = false;
         }
 

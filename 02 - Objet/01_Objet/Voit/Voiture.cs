@@ -5,21 +5,33 @@
         private string modele;
         private Moteur moteur;
         private Roue[] sesRoues;
-        private Roue roueSecours;
+        private Roue? roueSecours;
 
-        public Voiture(string modele, bool roueSecours)
+        public Voiture(string modele, int moteurPuissanceEnChevaux, int rouesTailleEnpouces, bool roueSecours)
         {
             this.modele = modele;
-            this.moteur = new Moteur();
-            this.sesRoues = new Roue[4];
+            this.moteur = new Moteur(moteurPuissanceEnChevaux);
+            this.sesRoues = new Roue[4]{new Roue(rouesTailleEnpouces),new Roue(rouesTailleEnpouces),new Roue(rouesTailleEnpouces),new Roue(rouesTailleEnpouces)};
             if (roueSecours)
             {
-                this.roueSecours = new Roue();
+                this.roueSecours = new Roue(rouesTailleEnpouces);
             }
             else
             {
                 this.roueSecours = null;
             }
+        }
+
+        public Voiture() : this("", 0, 0, false)
+        {
+        }
+
+        public Voiture(Voiture voitureACloner)
+        {
+            this.modele = voitureACloner.modele;
+            this.moteur = voitureACloner.moteur;
+            this.sesRoues = voitureACloner.sesRoues;
+            this.roueSecours = voitureACloner.roueSecours;
         }
 
         public string Modele { get => modele; }

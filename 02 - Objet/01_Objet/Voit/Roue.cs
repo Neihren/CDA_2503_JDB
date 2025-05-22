@@ -11,9 +11,19 @@ namespace Voit
         private int tailleEnPouces;
         private bool entrainDeTourner;
 
-        public Roue()
+        public Roue(int tailleEnPouces)
         {
-            this.tailleEnPouces = 17;
+            this.tailleEnPouces = tailleEnPouces;
+            this.entrainDeTourner = false;
+        }
+
+        public Roue() : this(0)
+        {
+            this.entrainDeTourner = false;
+        }
+
+        public Roue(Roue roueACloner) : this(roueACloner.tailleEnPouces)
+        {
             this.entrainDeTourner = false;
         }
 
