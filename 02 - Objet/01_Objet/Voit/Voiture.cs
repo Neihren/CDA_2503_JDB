@@ -7,14 +7,18 @@
         private Roue[] sesRoues;
         private Roue? roueSecours;
 
-        public Voiture(string modele, int moteurPuissanceEnChevaux, int rouesTailleEnpouces, bool roueSecours)
+        public Voiture(string modele, int moteurPuissanceEnChevaux,bool moteurTourne, int rouesTailleEnpouces,bool roueTourne, bool roueSecours)
         {
             this.modele = modele;
-            this.moteur = new Moteur(moteurPuissanceEnChevaux);
-            this.sesRoues = new Roue[4]{new Roue(rouesTailleEnpouces),new Roue(rouesTailleEnpouces),new Roue(rouesTailleEnpouces),new Roue(rouesTailleEnpouces)};
+            this.moteur = new Moteur(moteurPuissanceEnChevaux, moteurTourne);
+            this.sesRoues = new Roue[4];
+            for (int i = 0; i < sesRoues.Length; i++)
+            {
+                sesRoues[i] = new Roue(rouesTailleEnpouces, roueTourne);
+            }
             if (roueSecours)
             {
-                this.roueSecours = new Roue(rouesTailleEnpouces);
+                this.roueSecours = new Roue(rouesTailleEnpouces, roueTourne);
             }
             else
             {
@@ -22,7 +26,7 @@
             }
         }
 
-        public Voiture() : this("", 0, 0, false)
+        public Voiture() : this("", 0, false, 0, false, false)
         {
         }
 

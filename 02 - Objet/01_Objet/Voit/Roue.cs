@@ -11,20 +11,18 @@ namespace Voit
         private int tailleEnPouces;
         private bool entrainDeTourner;
 
-        public Roue(int tailleEnPouces)
+        public Roue(int tailleEnPouces, bool entrainDeTourner)
         {
             this.tailleEnPouces = tailleEnPouces;
-            this.entrainDeTourner = false;
+            this.entrainDeTourner = entrainDeTourner;
         }
 
-        public Roue() : this(0)
+        public Roue() : this(0, false)
         {
-            this.entrainDeTourner = false;
         }
 
-        public Roue(Roue roueACloner) : this(roueACloner.tailleEnPouces)
+        public Roue(Roue roueACloner) : this(roueACloner.tailleEnPouces, roueACloner.entrainDeTourner)
         {
-            this.entrainDeTourner = false;
         }
 
         public int TailleEnPouces { get => tailleEnPouces; }
