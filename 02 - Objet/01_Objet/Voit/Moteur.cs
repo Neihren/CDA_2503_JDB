@@ -33,17 +33,33 @@ namespace Voit
             return $"Moteur[puissanceEnChevaux : {this.puissanceEnChevaux}, estEntrainDeTourner : {this.EstEntrainDeTourner}]";
         }
 
-        public string Demarrer()
+        public bool Demarrer()
         {
-            this.estEntrainDeTourner = true;
-            return "Le moteur tourne";
+            if (this.estEntrainDeTourner == false)
+            {
+                this.estEntrainDeTourner = true;
+                return true;
+            }
+            return false;
         }
 
-        public string Arreter()
+        public bool Arreter()
         {
-            this.estEntrainDeTourner = false;
+            if (this.estEntrainDeTourner == true)
+            {
+                this.estEntrainDeTourner = false;
+                return true;
+            }
+            return false;
+        }
 
-            return "Le moteur est à l'arrêt";
+        public bool EntrainerRoues(Roue roueAvantDroite, Roue roueAvantGauche)
+        {
+            if (roueAvantDroite.Tourne() && roueAvantGauche.Tourne())
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -33,10 +33,14 @@ namespace Voit
             return $"Roue[tailleEnPouces : {this.tailleEnPouces}, entrainDeTourner : {this.EntrainDeTourner}]";
         }
 
-        public string Tourne()
+        public bool Tourne()
         {
-            this.entrainDeTourner = true;
-            return "les roues tournent";
+            if (this.entrainDeTourner == false)
+            {
+                this.entrainDeTourner = true;
+                return true;
+            }
+            return false;
         }
     }
 }

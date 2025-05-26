@@ -7,7 +7,7 @@
         private Roue[] sesRoues;
         private Roue? roueSecours;
 
-        public Voiture(string modele, int moteurPuissanceEnChevaux,bool moteurTourne, int rouesTailleEnpouces,bool roueTourne, bool roueSecours)
+        public Voiture(string modele, int moteurPuissanceEnChevaux, bool moteurTourne, int rouesTailleEnpouces, bool roueTourne, bool roueSecours)
         {
             this.modele = modele;
             this.moteur = new Moteur(moteurPuissanceEnChevaux, moteurTourne);
@@ -26,16 +26,28 @@
             }
         }
 
+        private Voiture(string modele, Moteur moteur, Roue[] sesRoues, Roue? roueSecours)
+        {
+            this.modele = modele;
+            this.moteur = new Moteur();
+            this.sesRoues = new Roue[4];
+            for (int i = 0; i < this.sesRoues.Length; i++)
+            {
+                this.sesRoues[i] = sesRoues[i];
+            }
+            this.roueSecours = roueSecours;
+        }
+
         public Voiture() : this("", 0, false, 0, false, false)
         {
         }
 
-        public Voiture(Voiture voitureACloner)
+        public Voiture(Voiture voitureACloner) : this(voitureACloner.modele, voitureACloner.moteur, voitureACloner.sesRoues, voitureACloner.roueSecours)
         {
-            this.modele = voitureACloner.modele;
-            this.moteur = voitureACloner.moteur;
-            this.sesRoues = voitureACloner.sesRoues;
-            this.roueSecours = voitureACloner.roueSecours;
+            //this.modele = voitureACloner.modele;
+            //this.moteur = voitureACloner.moteur;
+            //this.sesRoues = voitureACloner.sesRoues;
+            //this.roueSecours = voitureACloner.roueSecours;
         }
 
         public string Modele { get => modele; }
@@ -44,33 +56,34 @@
         {
             get => sesRoues[key];
         }
-       // public Roue[] SesRoues { get => sesRoues; }
+        // public Roue[] SesRoues { get => sesRoues; }
         public Roue RoueSecours { get => roueSecours; }
 
         public override string ToString()
         {
-            return $"Voiture[modele : {this.modele}, moteur : {this.moteur}, sesRoues : {this.sesRoues}, roueSecours {this.roueSecours}";
-        }
-
-        public string Demarrer()
-        {
-            moteur.Demarrer();
-            return "La voiture est démarrée";
-        }
-
-        public string Arreter()
-        {
-            moteur.Arreter();
-            return "La voiture est arrêtée";
-        }
-
-        public string Avancer()
-        {
-            foreach (Roue roue in sesRoues)
+            string voiture = $"Voiture[modele : {this.modele}, \n\tmoteur : {this.moteur},\n\tsesRoues : ";
+            foreach (Roue roues in sesRoues)
             {
-                roue.Tourne();
+                voiture += $"\n\t\t{roues.ToString()},";
             }
-            return "La voiture avance";
+            voiture += $"\n\troueSecours : \n\t\t{this.roueSecours}";
+            return voiture;
+        }
+
+        public bool Demarrer()
+        {
+
+            return moteur.Demarrer();
+        }
+
+        public bool Arreter()
+        {
+            return moteur.Arreter();
+        }
+
+        public bool Avancer()
+        {
+            return this.moteur.EntrainerRoues(sesRoues[0], sesRoues[1]);
         }
     }
 }
