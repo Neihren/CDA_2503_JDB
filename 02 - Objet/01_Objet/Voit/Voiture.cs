@@ -38,7 +38,7 @@
             this.roueSecours = roueSecours;
         }
 
-        public Voiture() : this("", 0, false, 0, false, false)
+        public Voiture() : this("", new Moteur(), new Roue[4] { new Roue(),new Roue(),new Roue(),new Roue()},null)
         {
         }
 
