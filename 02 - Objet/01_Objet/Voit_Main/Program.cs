@@ -6,7 +6,7 @@ namespace Voit_Main
     {
         static void Main(string[] args)
         {
-            Voiture voiture = new Voiture("Cupra", 120, false, 17, false, true);
+            Voiture voiture = new Voiture("Cupra", 120, 17, true);
             Console.WriteLine(voiture.ToString());
             voiture.Demarrer();
             Console.WriteLine(voiture.ToString());
