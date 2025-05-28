@@ -33,7 +33,7 @@
             this.sesRoues = new Roue[4];
             for (int i = 0; i < this.sesRoues.Length; i++)
             {
-                this.sesRoues[i] = sesRoues[i];
+                this.sesRoues[i] = new Roue();
             }
             this.roueSecours = roueSecours;
         }
