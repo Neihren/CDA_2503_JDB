@@ -31,9 +31,6 @@ namespace Voit
         {
         }
 
-        public int PuissanceEnChevaux { get => puissanceEnChevaux; }
-        public bool EstEntrainDeTourner { get => estEntrainDeTourner; }
-
         public override string ToString()
         {
             return $"Moteur[puissanceEnChevaux : {this.puissanceEnChevaux}, estEntrainDeTourner : {this.EstEntrainDeTourner}]";

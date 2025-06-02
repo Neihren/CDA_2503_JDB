@@ -31,9 +31,6 @@ namespace Voit
         {
         }
 
-        public int TailleEnPouces { get => tailleEnPouces; }
-        public bool EntrainDeTourner { get => entrainDeTourner; }
-
         public override string ToString()
         {
             return $"Roue[tailleEnPouces : {this.tailleEnPouces}, entrainDeTourner : {this.EntrainDeTourner}]";

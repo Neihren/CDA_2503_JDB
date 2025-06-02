@@ -46,15 +46,6 @@
         {
         }
 
-        public string Modele { get => modele; }
-        public Moteur Moteur { get => moteur; }
-        //public Roue this[int key]
-        //{
-        //    get => sesRoues[key];
-        //}
-        // public Roue[] SesRoues { get => sesRoues; }
-        public Roue RoueSecours { get => saRoueSecours; }
-
         public override string ToString()
         {
             string voiture = $"Voiture[modele : {this.modele}, \n\tmoteur : {this.moteur},\n\tsesRoues : ";
