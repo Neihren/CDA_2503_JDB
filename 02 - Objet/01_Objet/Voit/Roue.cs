@@ -33,7 +33,7 @@ namespace Voit
 
         public override string ToString()
         {
-            return $"Roue[tailleEnPouces : {this.tailleEnPouces}, entrainDeTourner : {this.EntrainDeTourner}]";
+            return $"Roue[tailleEnPouces : {this.tailleEnPouces}, entrainDeTourner : {this.entrainDeTourner}]";
         }
 
         public bool Tourne()
