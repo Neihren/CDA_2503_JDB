@@ -7,7 +7,7 @@
         private Roue[] sesRoues;
         private Roue? roueSecours;
 
-        public Voiture(string modele, int moteurPuissanceEnChevaux, int rouesTailleEnpouces, bool roueTourne, bool roueSecours)
+        public Voiture(string modele, int moteurPuissanceEnChevaux, int rouesTailleEnpouces, bool roueSecours)
         {
             this.modele = modele;
             this.moteur = new Moteur(moteurPuissanceEnChevaux, false);
