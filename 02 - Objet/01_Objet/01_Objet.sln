@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lepidoptere_main", "Lepidop
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Voit", "Voit\Voit.csproj", "{7C43131F-7871-4713-A9F6-1BC4E28C3F08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Voit_Main", "Voit_Main\Voit_Main.csproj", "{ADF60205-8EE9-4E23-99C9-130F3EBE815A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Voit_Main", "Voit_Main\Voit_Main.csproj", "{ADF60205-8EE9-4E23-99C9-130F3EBE815A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary_Compte", "ClassLibrary_Compte\ClassLibrary_Compte.csproj", "{B3F2BC2D-616D-4973-A50A-59528B431AD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{ADF60205-8EE9-4E23-99C9-130F3EBE815A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADF60205-8EE9-4E23-99C9-130F3EBE815A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADF60205-8EE9-4E23-99C9-130F3EBE815A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3F2BC2D-616D-4973-A50A-59528B431AD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3F2BC2D-616D-4973-A50A-59528B431AD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3F2BC2D-616D-4973-A50A-59528B431AD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3F2BC2D-616D-4973-A50A-59528B431AD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
