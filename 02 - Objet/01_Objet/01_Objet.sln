@@ -17,13 +17,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Voit_Main", "Voit_Main\Voit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary_Compte", "ClassLibrary_Compte\ClassLibrary_Compte.csproj", "{B3F2BC2D-616D-4973-A50A-59528B431AD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_Compte", "ConsoleApp_Compte\ConsoleApp_Compte.csproj", "{44A45755-9F9A-4668-9FBB-CD8587788205}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp_Compte", "ConsoleApp_Compte\ConsoleApp_Compte.csproj", "{44A45755-9F9A-4668-9FBB-CD8587788205}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary_Point", "ClassLibrary_Point\ClassLibrary_Point.csproj", "{3BF3FC5B-2290-439C-815C-8CF0AC16523D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary_Point", "ClassLibrary_Point\ClassLibrary_Point.csproj", "{3BF3FC5B-2290-439C-815C-8CF0AC16523D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_Point", "ConsoleApp_Point\ConsoleApp_Point.csproj", "{1AEA4D2D-DF36-46A1-B193-9C6D5813C4B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp_Point", "ConsoleApp_Point\ConsoleApp_Point.csproj", "{1AEA4D2D-DF36-46A1-B193-9C6D5813C4B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary_Fraction", "ClassLibrary_Fraction\ClassLibrary_Fraction.csproj", "{5A92B440-B963-45C0-A2D3-F369C4CE328B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary_Fraction", "ClassLibrary_Fraction\ClassLibrary_Fraction.csproj", "{5A92B440-B963-45C0-A2D3-F369C4CE328B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary_421", "ClassLibrary_421\ClassLibrary_421.csproj", "{1FF3B1FA-0948-4470-8306-8627AC12EF47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_421", "ConsoleApp_421\ConsoleApp_421.csproj", "{E18C7871-9260-49D0-98AF-34C6CDD34662}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{5A92B440-B963-45C0-A2D3-F369C4CE328B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A92B440-B963-45C0-A2D3-F369C4CE328B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A92B440-B963-45C0-A2D3-F369C4CE328B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FF3B1FA-0948-4470-8306-8627AC12EF47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF3B1FA-0948-4470-8306-8627AC12EF47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF3B1FA-0948-4470-8306-8627AC12EF47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF3B1FA-0948-4470-8306-8627AC12EF47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E18C7871-9260-49D0-98AF-34C6CDD34662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E18C7871-9260-49D0-98AF-34C6CDD34662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E18C7871-9260-49D0-98AF-34C6CDD34662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E18C7871-9260-49D0-98AF-34C6CDD34662}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
