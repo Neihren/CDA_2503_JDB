@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon</title>
+    <link rel="shortcut icon" href="./lib/assets/images/interface/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="./lib/styles/style.css">
+    <meta name="description" content="Page test pour Eudes">
+    <meta name="author" content="Jessy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <div id="vantajs">
+        <div id="content">
+            <header>
+                <img id="banner" src="./lib/assets/images/interface/Banner.png" alt="Bannière">
+                <ul class="topnav">
+                    <li><a href="./index.html">Accueil</a></li>
+                    <li><a href="./index.html#test">Actualités</a></li>
+                    <li><a class="active" href="#">Contact</a></li>
+                    <li class="right"><a href="#">A Propos</a></li>
+                </ul>
+            </header>
+
+            <main>
+                <div>
+                    <h1>Contact</h1>
+                    <form action="" method="get">
+                        <ul>
+                            <li>
+                                <input type="radio" id="Monsieur" name="Genre" value="Monsieur">
+                                <label for="Monsieur">Monsieur</label><br>
+                                <input type="radio" id="Madame" name="Genre" value="Madame">
+                                <label for="Madame">Madame</label><br>
+                                <input type="radio" id="Autre" name="Genre" value="Autre">
+                                <label for="Autre">Autre</label>
+                            </li>
+                            <li>
+                                <label id="name" for="name">Nom :</label>
+                                <input type="text" name="user_name" id="name" placeholder="Doe">
+                            </li>
+                            <li>
+                                <label for="firstname">Prenom :</label>
+                                <input type="text" name="user_firstname" id="firstname" placeholder="John">
+                            </li>
+                            <li>
+                                <label for="mail">E-mail :</label>
+                                <input type="email" name="user_mail" id="mail" placeholder="johndoe@jd.com">
+                            </li>
+                            <li>
+                                <p>Votre demande concerne :</p>
+                                <input type="checkbox" id="demande1" name="demande1" value="Website">
+                                <label for="demande1"> Un site web</label><br>
+                                <input type="checkbox" id="demande2" name="demande2" value="Hardware">
+                                <label for="demande2"> Une infrastructure</label><br>
+                                <input type="checkbox" id="demande3" name="demande3" value="Software">
+                                <label for="demande3"> Une Application</label>
+                            </li>
+                            <li>
+                                <label for="request">Vous voulez :</label>
+                                <select id="request" name="request">
+                                    <option value="Devis">Devis</option>
+                                    <option value="Support">Support</option>
+                                    <option value="Demande">Demande</option>
+                                    <option value="Autre">Autre</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label for="quand">Quand souhaitez vous ?</label>
+                                <input type="datetime-local" id="quand" name="quand">
+                            </li>
+                            <li>
+                                <label for="msg">Message :</label>
+                                <textarea name="user_message" id="msg" rows="10"
+                                    cols="90">Entrer ici votre demande...</textarea>
+                            </li>
+                            <li>
+                                <input type="submit" value="Envoyer" onclick="alert('Le formulaire a été envoyé')">
+                                <input type="reset" value="Reset">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </main>
+
+            <footer>
+                <ul>
+                    <li><a href="./index.html">Accueil</a></li>
+                    <li><a href="#">Actualités</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="#">A Propos</a></li>
+                </ul>
+                <p class="copyright">Jessy © 2025</p>
+            </footer>
+        </div>
+    </div>
+    <script src="./lib/scripts/three.min.js"></script>
+    <script src="./lib/scripts/vanta.clouds.min.js"></script>
+    <script src="./lib/scripts/vanta.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
+}
+
+#vantajs {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
+div #content {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 851px;
+    margin: 0 auto;
+    max-height: 100vh;
+
+}
+#banner {
+    width: 100%;
+    max-width: max-content;
+}
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+header ul li {
+    float: left;
+}
+
+header ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+header ul li a:hover:not(.active) {
+    background-color: #111;
+}
+
+header ul li a.active {
+    background-color: #1ed6c7;
+}
+
+header ul li.right {
+    float: right;
+}
+
+@media screen and (max-width: 600px) {
+
+    header ul li.right,
+    header ul li {
+        float: none;
+    }
+}
+
+main {
+    flex-grow: 1;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: rgba(187, 183, 183, 0.3);
+    overflow-y: scroll;
+    max-width: 811px;
+    width: 100%;
+}
+
+form ul {
+    list-style-type: none;
+}
+
+form li {
+    text-decoration: none;
+}
+
+label,
+textarea {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+textarea {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+#name,
+#firstname,
+#mail {
+    display: block;
+    margin: 10px 0 5px 0;
+}
+
+main video {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+}
+
+div #authorInfo {
+    display: flex;
+    align-items: center;
+    margin: 10px 10px 10px 10px;
+}
+
+footer {
+    width: 100%;
+}
+
+footer ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    justify-content: center;
+}
+
+footer ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+footer .copyright {
+    text-align: center;
+    margin: 3px;
+}
