@@ -1,0 +1,48 @@
+.container {
+    display: grid;
+    grid-template-columns: 0.8fr 1.8fr 0.4fr;
+    grid-template-rows: 0.3fr 2.4fr 0.3fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header header Ads"
+        "nav Article Article"
+        "nav footer footer";
+        background-color: white;
+}
+
+.header {
+    grid-area: header;
+    background-color: #BBCCFF;
+}
+
+.Ads {
+    grid-area: Ads;
+    background-color: #BBCCFF;
+
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #BBCCFF;
+
+}
+
+.Article {
+    grid-area: Article;
+    background-color: #BBCCFF;
+
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #BBCCFF;
+
+}
+
+html,
+body,
+.container {
+    height: 100%;
+    margin: 0;
+}
