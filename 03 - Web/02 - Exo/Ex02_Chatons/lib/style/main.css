@@ -1,0 +1,45 @@
+html {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #EBF0F0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #E64B3C;
+    color: #FFFFFF;
+}
+
+main {
+    padding: 30px;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    color: #E64B3C;
+    padding: 0 10px;
+}
+
+.card {
+    background-color: #FFFFFF;
+    width: 300px;
+    margin: 15px;
+}
+
+.text {
+    padding: 0 10px;
+}
+.picture img {
+    width: 100%;
+}
