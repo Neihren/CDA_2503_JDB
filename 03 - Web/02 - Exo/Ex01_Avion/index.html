@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avion</title>
+    <link rel="stylesheet" href="./lib/styles/main.css">
+</head>
+
+<body>
+    <header>
+        <img src="./lib/assets/img/planes_logo.svg" alt="Logo Avion">
+        <h1>Avions de ligne</h1>
+        <nav>
+            <ul>
+                <a href="#actualite"><li>Actualités</li></a>
+                <a href="#liste"><li>Avions (liste)</li></a>
+                <a href="#image"><li>Avions (cartes)</li></a>
+                <a href="https://airbus.com"><li>Site d'Airbus</li></a>
+                <a href="https://boeing.fr"><li>Site de Boeing</li></a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="actualite">
+            <h2>Actualités</h2>
+            <h3>Vueling élimine 100% des matières plastiques du service de restauration à bord</h3>
+            <p>La compagnie aérienne a retiré plus de 5 millions de tasses, 1 million de touillettes à café et 200 000
+                couverts en plastique.
+                Ces actions s'inscrivent dans le plan de développement durable de Vueling, et plus spécifiquement, dans
+                son
+                troisième pilier portant sur la gestion des déchets et la manière dont la compagnie collecte,
+                transporte,
+                traite et recycle les déchets.</p>
+            <h3>Safran signe un contrat de service avec State Grid General Aviation Company</h3>
+            <p>Ce contrat porte sur la maintenance des moteurs de ses hélicoptères Airbus H215 et H225.</p>
+            <h3>Space Rider: l'Europe va lancer sa mini navette spatiale en 2023</h3>
+            <p>Sélectionnés par l'agence spatiale européenne (ESA), Thales Alenia Space et l'italien Avio vont
+                développer
+                Space Rider, une petite navette spatiale dont le premier lancement aura lieu de Kourou en 2023.
+                Celle-ci, non habitée, servira notamment de laboratoire de recherche en orbite.</p>
+            <h2>Liste d'avions</h2>
+        </section>
+
+        <section id="liste">
+            <table>
+                <caption>Liste d'avions</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">constructeur</th>
+                        <th scope="col">modele</th>
+                        <th scope="col">passagers</th>
+                        <th scope="col">fret</th>
+                        <th scope="col">autonomie</th>
+                        <th scope="col">vitesse_croisiere</th>
+                        <th scope="col">vitesse_max</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>AIRBUS</td>
+                        <td>A300</td>
+                        <td>290</td>
+                        <td>0</td>
+                        <td>7500</td>
+                        <td>900</td>
+                        <td>990</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>AIRBUS</td>
+                        <td>A320</td>
+                        <td>180</td>
+                        <td>0</td>
+                        <td>7500</td>
+                        <td>900</td>
+                        <td>990</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>AIRBUS</td>
+                        <td>A350</td>
+                        <td>440</td>
+                        <td>0</td>
+                        <td>11800</td>
+                        <td>920</td>
+                        <td>1010</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>AIRBUS</td>
+                        <td>A380</td>
+                        <td>0</td>
+                        <td>300</td>
+                        <td>15200</td>
+                        <td>903</td>
+                        <td>1020</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>BOEING</td>
+                        <td>717</td>
+                        <td>125</td>
+                        <td>0</td>
+                        <td>9000</td>
+                        <td>890</td>
+                        <td>975</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>BOEING</td>
+                        <td>737</td>
+                        <td>0</td>
+                        <td>200</td>
+                        <td>14800</td>
+                        <td>920</td>
+                        <td>1020</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>BOEING</td>
+                        <td>747</td>
+                        <td>350</td>
+                        <td>0</td>
+                        <td>10500</td>
+                        <td>900</td>
+                        <td>1010</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>BOEING</td>
+                        <td>777</td>
+                        <td>0</td>
+                        <td>270</td>
+                        <td>16500</td>
+                        <td>980</td>
+                        <td>1020</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="image">
+            <h2>Gallerie d'images</h2>
+            <div id="fullGallery">
+                <div class="gallery">
+                    <a href="./lib/assets/img/airbus-a300.jpg" target="_blank">
+                        <img src="./lib/assets/img/airbus-a300.jpg" alt="Photo airbus-A300">
+                    </a>
+                    <div class="desc">Airbus-A300</div>
+                </div>
+                <div class="gallery">
+                    <a href="./lib/assets/img/airbus-a320.jpg" target="_blank">
+                        <img src="./lib/assets/img/airbus-a320.jpg" alt="Photo airbus-A320">
+                    </a>
+                    <div class="desc">Airbus-A320</div>
+                </div>
+                <div class="gallery">
+                    <a href="./lib/assets/img/airbus-a350.jpg" target="_blank">
+                        <img src="./lib/assets/img/airbus-a350.jpg" alt="Photo airbus-A350">
+                    </a>
+                    <div class="desc">Airbus-A350</div>
+                </div>
+                <div class="gallery">
+                    <a href="./lib/assets/img/airbus-a380.jpg" target="_blank">
+                        <img src="./lib/assets/img/airbus-a380.jpg" alt="Photo airbus-A380">
+                    </a>
+                    <div class="desc">Airbus-A380</div>
+                </div>
+                <div class="gallery">
+                    <a href="./lib/assets/img/boeing-717.jpg" target="_blank">
+                        <img src="./lib/assets/img/boeing-717.jpg" alt="Photo Boeing-717">
+                    </a>
+                    <div class="desc">Boeing-717</div>
+                </div>
+                <div class="gallery">
+                    <a href="./lib/assets/img/boeing-737.jpg" target="_blank">
+                        <img src="./lib/assets/img/boeing-737.jpg" alt="Photo Boeing-737">
+                    </a>
+                    <div class="desc">Boeing-737</div>
+                </div>
+                <div class="gallery">
+                    <a href="./lib/assets/img/boeing-747.jpg" target="_blank">
+                        <img src="./lib/assets/img/boeing-747.jpg" alt="Photo boeing-747">
+                    </a>
+                    <div class="desc">Boeing-747</div>
+                </div>
+                <div class="gallery">
+                    <a href="./lib/assets/img/boeing-777.jpg.jpg" target="_blank">
+                        <img src="./lib/assets/img/boeing-777.jpg" alt="Photo boeing-777">
+                    </a>
+                    <div class="desc">boeing-777</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Copyright 2020 <a href="https://crm68.fr">ARFP</a>
+    </footer>
+</body>
+
+</html>
