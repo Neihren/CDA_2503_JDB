@@ -144,3 +144,31 @@ footer .copyright {
     text-align: center;
     margin: 3px;
 }
+
+#Temperature {
+    display: block;
+}
+datalist {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  padding: 4px 6px;
+}
+
+option {
+  padding: 0;
+}
+
+input[type="range"] {
+  width: 200px;
+  margin: 0;
+}
+
+:root {
+	--temp: 50;
+}
+
+.temp:before {
+	counter-reset: variable var(--temp);
+	content: counter(variable)'°C';
+}

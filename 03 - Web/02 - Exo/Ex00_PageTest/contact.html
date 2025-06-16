@@ -53,6 +53,20 @@
                                 <input type="email" name="user_mail" id="mail" placeholder="johndoe@jd.com">
                             </li>
                             <li>
+                                <label for="Temperature">Temperature.</label>
+                                <input type="range" name="Temperature" id="Temperature" list="markers" value="50"
+                                    onclick="document.body.style.setProperty('--temp', this.value);"
+                                    oninput="document.body.style.setProperty('--temp', this.value);">
+                                <datalist id="markers">
+                                    <option value="0" label="0"></option>
+                                    <option value="25" label="25"></option>
+                                    <option value="50" label="50"></option>
+                                    <option value="75" label="75"></option>
+                                    <option value="100" label="100"></option>
+                                </datalist>
+                                Valeur : <span class="temp"></span>
+                            </li>
+                            <li>
                                 <p>Votre demande concerne :</p>
                                 <input type="checkbox" id="demande1" name="demande1" value="Website">
                                 <label for="demande1"> Un site web</label><br>
