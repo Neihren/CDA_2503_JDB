@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 0.8fr 1.8fr 0.4fr;
     grid-template-rows: 0.3fr 2.4fr 0.3fr;
-    gap: 10px 10px;
+    gap: 10px;
     grid-auto-flow: row;
     grid-template-areas:
         "header header Ads"
@@ -31,7 +31,6 @@
 .Article {
     grid-area: Article;
     background-color: #BBCCFF;
-
 }
 
 .footer {
@@ -45,4 +44,27 @@ body,
 .container {
     height: 100%;
     margin: 0;
+}
+
+#divflex {
+    display: flex;
+    height: 87%;
+    justify-content: flex-end;
+    align-content: flex-end;
+    flex-direction: row;
+    margin-left: 100px;
+    flex-wrap: wrap;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+section {
+    width: 40%;
+    background-color: white;
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+article {
+    height: 97%;
 }
