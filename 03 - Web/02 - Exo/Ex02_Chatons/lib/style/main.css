@@ -1,7 +1,12 @@
+@font-face {
+    font-family: "VariableFont_wght";
+    src: url(../VariableFont_wght.ttf);
+}
+
 html {
     margin: 0px;
     padding: 0px;
-    font-family: Arial;
+    font-family: VariableFont_wght;
 }
 
 body {
