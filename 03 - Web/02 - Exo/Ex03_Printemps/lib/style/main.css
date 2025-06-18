@@ -1,70 +1,78 @@
-.container {
-    display: grid;
-    grid-template-columns: 0.8fr 1.8fr 0.4fr;
-    grid-template-rows: 0.3fr 2.4fr 0.3fr;
-    gap: 10px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        "header header Ads"
-        "nav Article Article"
-        "nav footer footer";
-        background-color: white;
-}
-
-.header {
-    grid-area: header;
-    background-color: #BBCCFF;
-}
-
-.Ads {
-    grid-area: Ads;
-    background-color: #BBCCFF;
-
-}
-
-.nav {
-    grid-area: nav;
-    background-color: #BBCCFF;
-
-}
-
-.Article {
-    grid-area: Article;
-    background-color: #BBCCFF;
-}
-
-.footer {
-    grid-area: footer;
-    background-color: #BBCCFF;
-
-}
-
 html,
-body,
-.container {
-    height: 100%;
+body {
+    height: 100vh;
     margin: 0;
 }
 
-#divflex {
-    display: flex;
-    height: 87%;
-    justify-content: flex-end;
-    align-content: flex-end;
-    flex-direction: row;
-    margin-left: 100px;
-    flex-wrap: wrap;
-    padding-right: 50px;
-    padding-bottom: 50px;
+body {
+    display: grid;
+    grid-template-columns: 0.4fr 0.9fr 0.2fr; 
+    grid-template-rows: 1fr 10fr 1fr;
+    gap: 10px;
+    grid-template-areas:
+        "header header header"
+        "nav main main"
+        "nav footer footer";
+    background-color: white;
 }
 
-section {
-    width: 40%;
-    background-color: white;
-    margin: 5px;
-    padding: 0px 5px;
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1.3fr 0.2fr;
+    gap: 10px;
+    place-content: stretch;
+}
+
+header h1 {
+    grid-area: 1 / 1 / 2 / 2;
+    margin: 0;
+}
+
+header aside {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+h1,
+aside,
+nav,
+main,
+footer {
+    background-color: #BBCCFF;
 }
 
 article {
-    height: 97%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    height: 95%;
+    justify-content: flex-end;
+    gap: 15px;
 }
+
+h2 {
+    width: 100%;
+    align-self: flex-start;
+}
+
+section {
+    min-height: 150px;
+    width: 40%;
+    background-color: white;
+    padding: 0px 5px;
+}
+
