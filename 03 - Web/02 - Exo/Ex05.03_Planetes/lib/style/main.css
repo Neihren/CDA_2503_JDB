@@ -1,0 +1,27 @@
+body,
+html {
+    height: 100vh;
+    margin: 0;
+    background: url(../assets/vid/css-16-bg.webp) repeat;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-end;
+}
+
+#img1 {
+    height: 25%;
+}
+
+#img2 {
+    height: 37%;
+}
+
+#img3 {
+    height: 50%;
+}
