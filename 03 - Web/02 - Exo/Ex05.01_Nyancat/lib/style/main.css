@@ -1,0 +1,33 @@
+body, html {
+    height: 100vh;
+    margin: 0;
+}
+
+body {
+    background: #0F4D8F;
+}
+
+main {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 80%;
+}
+
+header {
+    padding: 25px;
+}
+
+h1 {
+    color: #FFFFFF;
+    margin: 0px;
+    text-align: center;
+}
+
+img {
+    padding: 30px;
+    border : 5px solid white;
+    border-radius: 40px;
+}
