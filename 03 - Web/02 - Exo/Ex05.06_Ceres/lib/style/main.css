@@ -1,0 +1,22 @@
+body, html {
+    height: 100vh;
+    margin: 0;
+    background: #E0E2E8;
+    font-family: "Verdana";
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+}
+
+span {
+    text-transform: uppercase;
+}
+
+img {
+    width: 33%;
+}
