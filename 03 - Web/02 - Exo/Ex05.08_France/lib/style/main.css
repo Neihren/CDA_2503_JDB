@@ -1,0 +1,47 @@
+html {
+    height: 100vh;
+    margin: 0;
+}
+
+body {
+    padding: 10px;
+}
+
+header,
+p,
+ul,
+th {
+    border: 1px solid blue;
+    background: grey;
+}
+
+header {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    height: 40%;
+}
+
+h1,
+h2 {
+    text-transform: uppercase;
+    color: blue;
+}
+
+p span {
+    text-decoration: underline;
+    color: blue;
+}
+
+li span {
+    font-weight: bold;
+}
+
+table,
+td {
+    border: 1px solid blue;
+}
