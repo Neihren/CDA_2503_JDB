@@ -1,4 +1,16 @@
-body, html {
-    height: 100vh;
-    margin: 0;
+:root {
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
