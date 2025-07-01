@@ -1,0 +1,146 @@
+.bt[data-v-e69aff78] {
+    --primary: #111111;
+    --secondary: #CCCCCC;
+    --link: #085E8F;
+    --highlight: #00000044;
+    --hover: #085E8F44
+}
+
+body.alt .bt[data-v-e69aff78] {
+    --primary: #CCCCCC;
+    --secondary: #111111;
+    --link: #09BCE0;
+    --highlight: #FFFFFF44;
+    --hover: #09BCE044
+}
+
+.bt-header[data-v-e69aff78] {
+    height: 200px;
+    background: url(/ressources/demos/exos/assets/basic-template-banner-7ceff320.png);
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.bt-header[data-v-e69aff78] {
+    text-align: center
+}
+
+.bt-header h1[data-v-e69aff78] {
+    margin: 0;
+    padding: 2rem;
+    color: #ccc
+}
+
+.bt-menu ul[data-v-e69aff78] {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0
+}
+
+.bt-menu a[data-v-e69aff78] {
+    display: block;
+    padding: 1rem;
+    background-color: var(--highlight)
+}
+
+.bt-menu a[data-v-e69aff78]:hover {
+    background-color: var(--hover);
+    color: var(--secondary)
+}
+
+.bt-main[data-v-e69aff78] {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: center
+}
+
+.bt-main>*[data-v-e69aff78] {
+    min-height: 100vh
+}
+
+.bt-menu[data-v-e69aff78] {
+    flex-basis: 240px;
+    background-color: var(--highlight)
+}
+
+.bt-content[data-v-e69aff78] {
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    gap: 2rem
+}
+
+.bt-menu h2[data-v-e69aff78],
+.bt-content h2[data-v-e69aff78] {
+    margin: 0;
+    padding: 1.5rem;
+    flex-basis: 100%;
+    background-color: var(--highlight)
+}
+
+.bt-content article[data-v-e69aff78] {
+    flex-basis: 40%;
+    height: 10rem;
+    padding: .5rem;
+    background-color: var(--highlight)
+}
+
+.bt-ads[data-v-e69aff78] {
+    flex-basis: 240px;
+    padding: .5rem;
+    text-align: justify;
+    font-size: 1.2rem;
+    background-color: var(--highlight)
+}
+
+.bt-ads h2[data-v-e69aff78] {
+    margin: 0;
+    padding: .5rem .3rem 1rem;
+    background-color: var(--highlight);
+    color: var(--link);
+    text-align: center
+}
+
+.bt-ads img[data-v-e69aff78] {
+    max-width: 100%
+}
+
+.bt-ads p[data-v-e69aff78] {
+    padding: .3rem
+}
+
+.bt-ads button[data-v-e69aff78] {
+    width: 100%;
+    display: block;
+    color: var(--secondary);
+    background-color: var(--link);
+    border: 1px solid var(--secondary);
+    padding: .5rem;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.6rem
+}
+
+.bt-footer[data-v-e69aff78] {
+    text-align: center;
+    padding: 1rem;
+    font-weight: 700;
+    height: 100px;
+    background: url(/ressources/demos/exos/assets/basic-template-banner-7ceff320.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scaleX(-1)
+}
+
+.bt-footer p[data-v-e69aff78] {
+    transform: scaleX(-1);
+    color: var(--link)
+}

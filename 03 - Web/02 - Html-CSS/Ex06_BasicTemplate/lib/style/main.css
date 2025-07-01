@@ -1,9 +1,19 @@
 :root {
-    --primary: #111111;
-    --secondary: #CCCCCC;
-    --link: #085E8F;
-    --highlight: #00000015;
-    --hover: #085E8F44;
+    --primary: #CCCCCC;
+    --secondary: #111111;
+    --link: #09BCE0;
+    --highlight: #FFFFFF44;
+    --hover: #09BCE044;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary: #111111;
+        --secondary: #CCCCCC;
+        --link: #085E8F;
+        --highlight: #00000015;
+        --hover: #09BCE0;
+    }
 }
 
 * {
@@ -95,7 +105,7 @@ article {
 aside {
     background-color: var(--highlight);
     flex-basis: 240px;
-   
+
 }
 
 aside h2 {
@@ -121,7 +131,7 @@ figcaption {
 aside a {
     display: block;
     text-decoration: none;
-    color : var(--secondary);
+    color: var(--secondary);
     background-color: var(--link);
     padding: 1rem;
     text-align: center;
