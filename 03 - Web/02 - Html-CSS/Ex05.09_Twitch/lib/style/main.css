@@ -48,8 +48,16 @@ nav li:last-child {
     background: #555555;
 }
 
-table, th, td {
+main > table, th, td {
     border: 1px solid;
+}
+
+td > table {
+    margin: -3px;
+}
+
+tr td:nth-child(4) {
+    border: none;
 }
 
 th {
