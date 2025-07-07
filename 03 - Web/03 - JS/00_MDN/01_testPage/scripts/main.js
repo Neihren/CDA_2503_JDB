@@ -7,7 +7,7 @@
 // document.querySelector("html").addEventListener("click", function () {
 //     alert("Aïe, arrêtez de cliquer !!");
 // });
-
+localStorage.clear();
 
 let myImage = document.querySelector("img");
 
