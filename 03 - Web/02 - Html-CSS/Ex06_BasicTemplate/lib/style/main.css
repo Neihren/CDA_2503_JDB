@@ -16,6 +16,10 @@
     }
 }
 
+@media(min-width: 768px) and (max-width: 1388px) {
+    
+}
+
 * {
     box-sizing: border-box;
 }
@@ -26,48 +30,44 @@ html {
 
 body {
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     height: 100vh;
     margin: 0;
     font-size: 1.6rem;
     font-family: arial;
     color: var(--primary);
-}
-
-h2 {
-    background-color: var(--highlight);
-    margin: 0;
-    padding: 1rem;
-    width: 100%;
-}
-
-header {
-    height: 200px;
-    background-image: url(../assets/img/basic-template-banner.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-header h1 {
-    text-align: center;
-    margin: 0;
-    padding: 2rem;
-    color: var(--secondary);
-}
-
-main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: row;
     background-color: var(--secondary);
 }
 
+header {
+    flex-basis: 200px;
+    width: 100%;
+    background-image: url(../assets/img/basic-template-banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+header a {
+    color: var(--secondary);
+    text-decoration: none;
+    padding: 2rem;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.contenu {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
 nav {
-    flex-basis: 240px;
-    padding: 1rem;
-    text-align: justify;
     background-color: var(--highlight);
-    padding: 0;
+    flex: 0 0 240px;
 }
 
 nav ul {
@@ -84,28 +84,41 @@ nav a {
     text-decoration: none;
 }
 
+nav a:hover {
+    background-color: var(--hover);
+    color: var(--secondary);
+}
+
+main {
+    flex: 1;
+}
+    
+
+main h1 {
+    background-color: var(--highlight);
+    padding: 1.2rem;
+    margin-top: 0;
+    font-size: 2.5rem;
+}
+
 section {
     display: flex;
-    flex: 1;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: flex-start;
+    flex-flow: row wrap;
     justify-content: space-evenly;
     gap: 2rem;
 }
 
 article {
     background-color: var(--highlight);
-    height: 10rem;
     width: 40%;
     padding: 1rem;
 }
 
 
 aside {
+    flex: 0 0 240px;
     background-color: var(--highlight);
-    flex-basis: 240px;
-
+    
 }
 
 aside h2 {
