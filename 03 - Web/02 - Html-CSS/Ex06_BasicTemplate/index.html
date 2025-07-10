@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./lib/style/main.css">
     <title>Mon blog technique</title>
+    <script src="./lib/scripts/menu.js" type="module"></script>
 </head>
 
 <body>
@@ -15,7 +16,8 @@
     </header>
 
     <div class="contenu">
-        <nav>
+        <a href="#" id="menuToggle">≡</a>
+        <nav id="menu">
             <h2>Menu</h2>
             <ul>
                 <li><a href="#">Accueil</a></li>
@@ -68,17 +70,19 @@
         </main>
         <aside>
             <h2>Publicité</h2>
-            <figure>
-                <img src="./lib/assets/img/basic-template-aside.jpg" alt="Pub livre Algorithmique">
-                <figcaption>Ce livre sur l'algorithmique s'adresse à toute personne désireuse de maîtriser les bases
-                    essentielles de la programmation. Pour apprendre à programmer, il faut d'abord comprendre ce qu'est
-                    vraiment un ordinateur, comment il fonctionne et surtout comment il peut faire fonctionner des
-                    programmes, comment il manipule et stocke les données et les instructions, quelle est sa logique.
-                    Alors, au fur et à mesure, le reste devient évidence : variables, conditions, boucles...
-                </figcaption>
-            </figure>
-            <a href="https://www.amazon.fr/Algorithmique-Techniques-fondamentales-programmation-informatique/dp/2409012264"
-                target="_blank" rel="noopener noreferrer">J'achète !</a>
+            <div class="aside_content">
+                <figure>
+                    <img src="./lib/assets/img/basic-template-aside.jpg" alt="Pub livre Algorithmique">
+                    <figcaption>Ce livre sur l'algorithmique s'adresse à toute personne désireuse de maîtriser les bases
+                        essentielles de la programmation. Pour apprendre à programmer, il faut d'abord comprendre ce qu'est
+                        vraiment un ordinateur, comment il fonctionne et surtout comment il peut faire fonctionner des
+                        programmes, comment il manipule et stocke les données et les instructions, quelle est sa logique.
+                        Alors, au fur et à mesure, le reste devient évidence : variables, conditions, boucles...
+                    </figcaption>
+                </figure>
+                <a href="https://www.amazon.fr/Algorithmique-Techniques-fondamentales-programmation-informatique/dp/2409012264"
+                    target="_blank" rel="noopener noreferrer">J'achète !</a>
+            </div>
         </aside>
     </div>
 

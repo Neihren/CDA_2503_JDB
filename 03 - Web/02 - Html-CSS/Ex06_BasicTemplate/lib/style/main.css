@@ -16,10 +16,6 @@
     }
 }
 
-@media(min-width: 768px) and (max-width: 1388px) {
-    
-}
-
 * {
     box-sizing: border-box;
 }
@@ -70,12 +66,31 @@ nav {
     flex: 0 0 240px;
 }
 
+#menu {
+    display: block;
+}
+
+#menuToggle {
+    display: none;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-weight: bold;
+    font-size: larger;
+    text-decoration: none;
+    padding: 5px 8px;
+    text-align: center;
+    color: white;
+    border: 0.1rem solid white;
+    border-radius: 10%;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
 }
 
-nav a {
+nav ul li a {
     display: block;
     margin: 1rem 0;
     padding: 1rem;
@@ -92,7 +107,7 @@ nav a:hover {
 main {
     flex: 1;
 }
-    
+
 
 main h1 {
     background-color: var(--highlight);
@@ -112,13 +127,14 @@ article {
     background-color: var(--highlight);
     width: 40%;
     padding: 1rem;
+    padding-bottom: 2rem;
 }
 
 
 aside {
     flex: 0 0 240px;
     background-color: var(--highlight);
-    
+
 }
 
 aside h2 {
@@ -149,4 +165,51 @@ aside a {
     padding: 1rem;
     text-align: center;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 1200px) {}
+
+@media only screen and (max-width: 767px) {
+    #menuToggle {
+        display: inline;
+    }
+
+    #menu {
+        display: none;
+        text-align: center;
+    }
+
+    .contenu {
+        flex-flow: column nowrap;
+    }
+
+    article {
+        width: 80%;
+    }
+
+    .aside_content {
+        display: flex;
+        flex-flow: column wrap;
+        height: 30rem;
+        align-content: space-evenly;
+        justify-content: space-evenly;
+    }
+
+    figure {
+        display: contents;
+    }
+
+    aside img {
+        height: 90%;
+        width: auto;
+    }
+
+    aside figcaption {
+        width: 45%;
+    }
+
+    aside a {
+        display: inline-block;
+        width: 45%;
+    }
 }
