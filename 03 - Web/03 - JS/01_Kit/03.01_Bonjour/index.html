@@ -4,19 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./lib/style/main.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./style/main.css">
+    <script src="./scripts/info.js" defer></script>
+    <title>Bonjour</title>
 </head>
 
 <body>
     <main>
         <h1>Saisissez un prénom et un âge</h1>
-        <label>Prénom: <input type="text" id="firstname"></label>
-        <label>Âge: <input type="number" id="age"></label>
-        <button id="validate">Valider</button>
-        <button id="reset">Vider</button>
+        <form id="form">
+            <label>Prénom: <input type="text" id="firstname"></label>
+            <label>Âge: <input type="number" id="age"></label>
+            <button id="validate" type="button" form="form">Valider</button>
+            <button id="empty" type="reset" form="form">Vider</button>
+        </form>
         <hr>
-        <p>Compléter/corriger le formulaire.</p>
+        <p id="message"></p>
     </main>
 </body>
 
