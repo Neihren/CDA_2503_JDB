@@ -42,3 +42,7 @@ span {
     color: blue;
     font-weight: bold;
 }
+
+hr {
+    margin: 2rem 0;
+}
