@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <script src="./scripts/date.js" defer></script>
+    <title>Date et Intervalles</title>
+</head>
+
+<body>
+    <main>
+        <h1>Gestion des dates et des intervalles</h1>
+        <form id="form">
+            <label for="curDate">Date actuelle : <input type="date" id="curDate" form="form" value=""></label>
+            <label for="curTime">Heure actuelle : <input type="time" id="curTime" form="form"></label>
+            <button id="btnDisplayDate" type="button" form="form">Afficher Date du jour</button>
+        </form>
+        <div id="dateTimeDisplay">
+            <hr>
+            <p id="dateTime">
+                Aujourd'hui nous sommes le <span id="spanDate"></span>, l'heure courante est : <span id="spanHour"></span>.
+            </p>
+            <hr>
+            <h1>Sélectionner une date et une heure :</h1>
+            <form id="form2">
+                <label for="userInput">Date :<input type="datetime-local" id="userInput"></label>
+                <button id="btnCalculate" type="button">Calculer l'intervalle</button>
+            </form>
+            <p id="displayInterval">
+                Il y a <span id="spanNBDays"></span> jours entre aujourd'hui et le <span id="spanInterval"></span>.
+            </p>
+        </div>
+    </main>
+</body>
+
+</html>
