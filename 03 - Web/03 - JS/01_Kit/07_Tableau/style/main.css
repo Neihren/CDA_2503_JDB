@@ -1,0 +1,42 @@
+:root {
+    --mainColor: #536b78;
+    --secondaryColor: #accbe1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--mainColor);
+    color: var(--secondaryColor);
+}
+
+section {
+    border: 1px solid var(--secondaryColor);
+    width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1 {
+    margin-block: 0.67em;
+    font-size: 2em;
+}
+
+table {
+    background-color: #637081;
+    border: 0.2rem solid #7c98b3;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: center;
+}
