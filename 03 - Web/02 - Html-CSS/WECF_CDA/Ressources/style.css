@@ -1,0 +1,31 @@
+:root {
+    --color1: darkblue;
+    --color2: yellow;
+    --color3: darkorange;
+    --color4: lightcyan;
+    --color5: darkgrey; 
+    --color6: #FFFFFF33; /* Blanc transparent */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+}
+
+h1, #result, footer {
+    text-align: center;
+}
+
+form > div {
+    margin: 1rem 0;
+    padding: .5rem;
+}
