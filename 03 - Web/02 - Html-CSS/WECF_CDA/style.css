@@ -19,13 +19,57 @@ body {
     font-size: 1.6rem;
     margin: 0;
     padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--color1);
+    color: var(--color2);
 }
 
+form {
+    width: 800px;
+    margin: 0 auto;
+    background-color: var(--color6);
+    border: 1px solid var(--color3);
+}
 h1, #result, footer {
     text-align: center;
+}
+
+label {
+    display: inline-block;
+    width: 240px;
+}
+
+input {
+    width: 300px;
+    color: var(--color4);
+    background-color: var(--color6);
+    font-size: larger;
+    padding: 0.3rem;
+}
+
+input::placeholder {
+    color: var(--color5);
+}
+
+button {
+    display: block;
+    width: 200px;
+    color: var(--color4);
+    font-size: larger;
+    padding: 0.3rem;
+    margin: 0 auto;
+}
+
+form,
+input,
+button {
+    background-color: var(--color6);
+    border: 1px solid var(--color3);
 }
 
 form > div {
     margin: 1rem 0;
     padding: .5rem;
 }
+
+
