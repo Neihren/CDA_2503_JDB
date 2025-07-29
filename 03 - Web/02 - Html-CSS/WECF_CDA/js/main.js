@@ -7,7 +7,7 @@ const password2 = document.getElementById('password2');
 credits.textContent = "Jessy DE BRITO";
 
 
-function mafonction(event) {
+function mafonction() {
     const formUsername = username.value.trim();
     const formPassword1 = password1.value.trim();
     const formPassword2 = password2.value.trim();
@@ -33,7 +33,7 @@ function mafonction(event) {
 
 function display(event) {
     event.preventDefault();
-    result.textContent = mafonction(event);
+    result.textContent = mafonction();
 
 }
 
