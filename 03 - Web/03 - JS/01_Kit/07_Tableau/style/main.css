@@ -40,3 +40,15 @@ table {
 th {
     text-align: center;
 }
+
+td, th {
+    border: 1px solid var(--secondaryColor);
+    padding: 1rem 0.5rem 0.2rem;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: var(--secondaryColor);
+    text-align: center;
+}
