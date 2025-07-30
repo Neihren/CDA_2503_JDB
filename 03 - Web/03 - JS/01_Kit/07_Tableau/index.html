@@ -4,14 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/main.css">
-    <script src="./scripts/tableau.js" type="module"></script>
+    <script src="./scripts/tableau.js" defer type="module"></script>
     <title>Tableau - Liste personnes inscrites</title>
 </head>
 
 <body>
     <main>
-        <section id="mainSection">
-            <h1>Liste des personnes inscrites</h1>
+        <h1>Liste des personnes inscrites</h1>
+        <section>
+            <span>Ajouter une personne</span>
+            <form>
+                <label for="firstname">Prénom :</label>
+                <input type="text" name="prenom" id="firstname">
+                <label for="surname">Nom :</label>
+                <input type="text" name="nom" id="surname">
+                <button type="button" id="add">Ajouter</button>
+            </form>
+            <span id="result"></span>
+        </section>
+        <section>
             <ul id="listPerson"></ul>
             <table id="tableMain">
                 <thead>
