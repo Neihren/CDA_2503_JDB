@@ -1,18 +1,17 @@
-# Port par défaut 3306
-# Utilise l'image mariadb de version 11
-FROM mariadb:11
+## port par défaut 5432
+# Utilise l'image postgres
+FROM postgres:17
 
-# Variable environnement pour le compte admin de la DB
-ENV MYSQL_ROOT_PASSWORD=azer
 
+ENV POSTGRES_ROOT_PASSWORD=1234
 # Créer une base de donnée nommée mydatabase
-ENV MYSQL_DATABASE=mydatabase
+ENV POSTGRES_DB=mydatabase
 
 # Créer un utilisateur ayant les droits sur la basse crée précédemment
-ENV MYSQL_USER=jessy
+ENV POSTGRES_USER=jessy
 
-# Définir le mdp pour cet utilisateur
-ENV MYSQL_PASSWORD=1234
+# Variable environnement pour le mdp du compte jessy
+ENV POSTGRES_PASSWORD=azer
 
 VOLUME [ "/data" ]
 
