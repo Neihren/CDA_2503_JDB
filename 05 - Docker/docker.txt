@@ -1,0 +1,40 @@
+docker build
+	.								### Contexte
+	-t		--tag					### Tag name:tag
+	-f		--file					### nom du dockerfile
+
+docker run
+	-d		--detach				### Run le container en arrière plan
+	-e		--env					### Définier variable environnement
+	-i		--interactive			### Keep STDIN open even if not attached
+			--name					### nom du container
+	-p		--publish				### définir le port du container portmachine:portcontainer
+	-t		--tty					### Allocate a pseudo-TTY
+	-v		--volume				### Lie un volume nomduvolume:chemindudossier
+	
+docker exec
+	-i		--interactive			### Keep STDIN open even if not attached
+	-t		--tty					### Allocate a pseudo-TTY
+
+bash
+/bin/bash
+/bin/sh
+
+docker volume
+	ls								### liste les volumes
+	prune							### Supprime les volumes non utilisés
+
+docker images						### liste les images
+
+docker ps							### liste les containers
+	-a								### liste aussi les containers arrêtés
+
+Mysql						Mariadb						postgres
+port 3306					port 3306					port 5432
+VOLUME [/var/lib/mysql]		VOLUME [/var/lib/mysql]		VOLUME [/var/lib/postgresql/data]
+
+Exemples :
+
+docker build . -t postgres-17:1
+docker run -d --name postgres-1 -p 4002:5432 -v postgres-1_pgdata:/var/lib/postgresql/data -v postgres-1_data:/data postgres-17:1
+docker exec -it postgres-1 bash
