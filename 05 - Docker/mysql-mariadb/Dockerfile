@@ -1,6 +1,6 @@
 # Port par défaut 3306
 # Utilise l'image mariadb de version 11
-FROM mariadb:11
+FROM mariadb:11.8.3
 
 # Variable environnement pour le compte admin de la DB
 ENV MYSQL_ROOT_PASSWORD=azer
