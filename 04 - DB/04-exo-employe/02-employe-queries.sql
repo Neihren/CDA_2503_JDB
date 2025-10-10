@@ -244,12 +244,39 @@ WHERE
 
 -- 17. Liste des employés (nom, salaire) dont le salaire est supérieur à la moyenne globale des salaires
 
-
+SELECT
+   ENAME,
+   SAL
+FROM
+   emp
+WHERE
+   SAL > 2073
+   
+SELECT
+   E1.ENAME,
+   E1.SAL
+FROM
+   emp AS E1
+INNER JOIN
+   emp AS E2 ON E2.SAL = E1.SAL
+WHERE
+   E2.SAL > AVG(E1.SAL)
 
 -- 18. Création d'une table PROJET avec comme colonnes numéro de projet (3 chiffres), nom de projet(5 caractères), budget. Entrez les valeurs suivantes:
 -- 101, ALPHA, 96000
 -- 102, BETA, 82000
 -- 103, GAMMA, 15000
+
+CREATE TABLE PROJET (
+   PNO INT(3),
+   PNAME VARCHAR(7) NOT NULL,
+   PBUDGET DECIMAL(8,2) NOT NULL,
+   PRIMARY KEY(PNO)
+)
+
+INSERT INTO PROJET (
+   
+)
 
 -- 19. Ajouter l'attribut numéro de projet à la table EMP et affecter tous les vendeurs du département 30 au projet 101, et les autres au projet 102
 

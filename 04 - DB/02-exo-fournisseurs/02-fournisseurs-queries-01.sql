@@ -159,3 +159,72 @@ INNER JOIN
 	ligne_bon_de_livraison AS TL ON TL.codeF = TF.codeF
 GROUP BY
 	codeA;
+
+-- PROCEDURE STOCKEE
+
+DELIMITER |
+CREATE PROCEDURE afficher_employe()
+BEGIN
+	SELECT
+		codeEmpl,
+		nom,
+		salaire
+	FROM
+		employe
+	ORDER BY
+		nom ASC;
+END|
+DELIMITER ;
+
+-- APPEL DE PROCEDURE STOCKEE
+
+CALL afficher_employe();
+
+-- Procédure avec paramètre
+-- On choisi un fournisseur et on obtient la liste des produits qu'il nous fournit
+DELIMITER |
+CREATE PROCEDURE afficher_produit_fournisseur(IN p_codeF CHAR(6))
+BEGIN
+	SELECT
+		A.nomA AS "Nom Article",
+		A.`type` AS "Type Article",
+		A.nomR AS "Rayon"
+	FROM
+		ligne_bon_de_livraison AS L
+	INNER JOIN
+		articles AS A ON A.codeA = L.codeA
+	WHERE
+	L.codeF = p_codeF;
+END|
+DELIMITER ;
+
+SET @p_codeF := "FABCFG";
+CALL afficher_produit_fournisseur(@p_codeF);
+
+-- Récupérer aussi le nom du fournisseur
+
+DELIMITER |
+CREATE PROCEDURE afficher_prod_outFournisseur(IN p_codeF CHAR(6), OUT p_nomfournisseur VARCHAR(50))
+BEGIN
+	SELECT
+		A.nomA AS "Nom Article",
+		A.`type` AS "Type Article",
+		A.nomR AS "Rayon"
+	FROM
+		ligne_bon_de_livraison AS L
+	INNER JOIN
+		articles AS A ON A.codeA = L.codeA
+	WHERE
+	L.codeF LIKE p_codeF;
+	SELECT
+		nomF INTO p_nomfournisseur
+	FROM
+		fournisseurs
+	WHERE codeF = p_codeF;
+END|
+DELIMITER ;
+
+SET @p_codeF := "FABCFG";
+
+CALL afficher_prod_outFournisseur(@p_codeF, @p_nomfournisseur);
+SELECT @p_nomfournisseur;
