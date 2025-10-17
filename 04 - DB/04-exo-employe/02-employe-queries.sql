@@ -147,6 +147,26 @@ FROM
 WHERE
    DEPTNO = 20;
 
+SELECT 
+	ENAME,
+	HIREDATE,
+	DNAME
+FROM
+   emp
+INNER JOIN
+   dept ON emp.DEPTNO = dept.DEPTNO
+WHERE
+   HIREDATE IN (
+      SELECT
+         HIREDATE
+      FROM
+         emp
+      INNER JOIN
+         dept ON emp.DEPTNO = dept.DEPTNO
+      WHERE
+         DNAME LIKE 'SALES')
+   AND DNAME = 'RESEARCH';
+
 -- 13. Donner le salaire le plus élevé par département
 
 SELECT
@@ -313,7 +333,7 @@ REFERENCES
 
 -- 20. Créer une vue comportant tous les employés avec nom, job, nom de département et nom de projet
 
-SELECT
+CREATE VIEW Employes AS SELECT
    ENAME AS 'Nom Employé',
    JOB AS 'Poste',
    DNAME AS 'Departement',
@@ -427,63 +447,180 @@ WHERE
 -- 6. Afficher les noms et dates d'embauche des employés embauchés avant leur manager, avec le nom et date d'embauche du manager.
 
 SELECT
-   ENAME AS 'Employé',
-   HIREDATE AS "Date d'embauche"
+   E.ENAME AS 'Employé',
+   E.HIREDATE AS "Date d'embauche",
+   E2.ENAME AS 'Manager',
+   E2.HIREDATE AS "Date d'embauche"
 FROM
-   emp
+   emp AS E
+INNER JOIN
+   emp AS E2 ON E2.EMPNO = E.MGR
 WHERE
-
+   E2.HIREDATE > E.HIREDATE;
 
 -- 7. Lister les numéros des employés n'ayant pas de subordonné.
 
-
+SELECT
+	E.EMPNO AS 'No Employé sans subordonné'
+FROM
+	emp AS E
+LEFT JOIN
+	emp AS E2 ON E.EMPNO = E2.MGR
+WHERE
+	E2.EMPNO IS NULL;
 
 -- 8. Afficher les noms et dates d'embauche des employés embauchés avant BLAKE.
 
-
+SELECT
+	E.ENAME AS 'Nom',
+	E.HIREDATE AS 'Date embauche'
+FROM
+	emp AS E
+INNER JOIN
+	emp AS E2 ON E2.ENAME = 'BLAKE'
+WHERE
+	E.HIREDATE < E2.HIREDATE;
 
 -- 9. Afficher les employés embauchés le même jour que FORD.
 
-
+SELECT
+	E.ENAME AS 'Nom',
+	E.HIREDATE AS 'Date embauche'
+FROM
+	emp AS E
+INNER JOIN
+	emp AS E2 ON E2.ENAME = 'FORD'
+WHERE
+	E.HIREDATE = E2.HIREDATE;
 
 -- 10. Lister les employés ayant le même manager que CLARK.
 
-
+SELECT
+	E.ENAME AS 'Nom',
+	E.MGR 'Manager'
+FROM
+	emp AS E
+INNER JOIN
+	emp AS E2 ON E2.ENAME = 'CLARK'
+WHERE
+	E.MGR = E2.MGR;
 
 -- 11. Lister les employés ayant même job et même manager que TURNER.
 
-
+SELECT
+	E.ENAME AS 'Nom',
+	E.JOB 'Poste'
+FROM
+	emp AS E
+INNER JOIN
+	emp AS E2 ON E2.ENAME = 'TURNER'
+WHERE
+	E.MGR = E2.MGR
+	AND
+	E.JOB = E2.JOB;
 
 -- 12. Lister les employés du département RESEARCH embauchés le même jour que quelqu'un du département SALES.
 
-
+SELECT
+   E.ENAME,
+   E.HIREDATE
+FROM
+   emp AS E
+INNER JOIN
+   dept AS D ON E.DEPTNO = D.DEPTNO
+INNER JOIN
+   emp AS E2 ON E.HIREDATE = E2.HIREDATE
+INNER JOIN
+   dept AS D2 ON E2.DEPTNO = D2.DEPTNO
+WHERE
+   D.DNAME = 'RESEARCH'
+   AND D2.DNAME = 'SALES';
 
 -- 13. Lister le nom des employés et également le nom du jour de la semaine correspondant à leur date d'embauche.
 
+SELECT
+   ENAME AS 'Nom',
+   DATE_FORMAT(HIREDATE, '%W')
+FROM
+   emp;
 
 
 -- 14. Donner, pour chaque employé, le nombre de mois qui s'est écoulé entre leur date d'embauche et la date actuelle.
 
-
+SELECT
+  ENAME,
+  HIREDATE,
+  TIMESTAMPDIFF(MONTH, HIREDATE, CURDATE()) AS mois_ecoules
+FROM
+  emp;
 
 -- 15. Afficher la liste des employés ayant un M et un A dans leur nom.
 
+SELECT
+	ENAME
+FROM
+	emp
+WHERE
+	ENAME LIKE '%M%'
+  	AND ENAME LIKE '%A%';
 
 
 -- 16. Afficher la liste des employés ayant deux 'A' dans leur nom.
 
+SELECT
+	ENAME
+FROM
+	emp
+WHERE
+	ENAME LIKE '%A%A%';
 
 
 -- 17. Afficher les employés embauchés avant tous les employés du département 10.
 
+SELECT
+	ENAME,
+	HIREDATE
+FROM
+	emp
+WHERE
+	HIREDATE < ALL (
+		SELECT
+			HIREDATE
+		FROM
+			emp
+		WHERE
+			DEPTNO = 10
+);
 
 
 -- 18. Sélectionner le métier où le salaire moyen est le plus faible.
 
+SELECT
+	JOB
+FROM
+	emp
+GROUP BY
+	JOB
+ORDER BY
+	AVG(SAL) ASC
+LIMIT 1;
 
 
 -- 19. Sélectionner le département ayant le plus d'employés.
 
+SELECT
+	d.DEPTNO,
+	d.DNAME,
+	COUNT(e.EMPNO) AS nombre_employes
+FROM
+	dept d
+INNER JOIN
+	emp e ON d.DEPTNO = e.DEPTNO
+GROUP BY
+	d.DEPTNO, d.DNAME
+ORDER BY
+	nombre_employes DESC
+LIMIT 1;
 
 
 -- 20. Donner la répartition en pourcentage du nombre d'employés par département selon le modèle ci-dessous
