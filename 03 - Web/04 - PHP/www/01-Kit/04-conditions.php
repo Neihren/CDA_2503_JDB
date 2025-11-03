@@ -8,6 +8,13 @@ function isMajor(int $age): bool
     return false;
 }
 
+echo isMajor(12);
+echo "\n";
+echo isMajor(18);
+echo "\n";
+echo isMajor(42);
+echo "\n";
+
 function getRetired(int $age): string
 {
     if ($age == 60) {
@@ -19,6 +26,15 @@ function getRetired(int $age): string
     }
     return "Vous n'êtes pas encore né.";
 }
+
+echo getRetired(12);
+echo "\n";
+echo getRetired(60);
+echo "\n";
+echo getRetired(72);
+echo "\n";
+echo getRetired(-2);
+echo "\n";
 
 function getMax(float $a, float $b, float $c): float
 {
@@ -37,20 +53,6 @@ function getMax(float $a, float $b, float $c): float
     return $c;
 }
 
-echo isMajor(12);
-echo "\n";
-echo isMajor(18);
-echo "\n";
-echo isMajor(42);
-echo "\n";
-echo getRetired(12);
-echo "\n";
-echo getRetired(60);
-echo "\n";
-echo getRetired(72);
-echo "\n";
-echo getRetired(-2);
-echo "\n";
 echo "\n";
 echo getMax(1.1, 1.1, 2.2);         // 0 (égalité a,b)
 echo "\n";
@@ -80,3 +82,36 @@ echo getMax(-3.3, -4.4, -1.1);      // -1.1 (c max négatif)
 echo "\n";
 echo getMax(12.5546, 4.15, 8.12);   // 12.5546 (exemple précis)
 echo "\n";
+
+function capitalCity(string $country): string
+{
+    $capital = "";
+    switch ($country) {
+        case "France":
+            $capital = "Paris";
+            break;
+        case "Allemagne":
+            $capital = "Berlin";
+            break;
+        case "Italie":
+            $capital = "Rome";
+            break;
+        case "Maroc":
+            $capital = "Rabat";
+            break;
+        case "Espagne":
+            $capital = "Madrid";
+            break;
+        case "Portugal":
+            $capital = "Lisbonne";
+            break;
+        case "Angleterre":
+            $capital = "Londres";
+            break;
+        default:
+            $capital = "Capitale inconnue";
+    }
+    return $capital;
+}
+
+
