@@ -20,6 +20,11 @@ body {
     padding: 20px;
 }
 
+#summary {
+    color: #006D44;
+    font-weight: bold;
+}
+
 fieldset {
     border: 2px solid #00915A; /* Bordure du fieldset en Vert intense */
     padding: 20px;

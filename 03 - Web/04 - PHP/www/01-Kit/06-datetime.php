@@ -37,7 +37,7 @@ function getTimeLeft(string $date): string
         $duration = $duration - 365 * $nbYear;
         $nbMonth = (int)($duration / 30);
         if ($nbYear > 1) {
-            return "Dans ".$nbYear." ans et ".$nbMonth." mois.";  
+            return "Dans ".$nbYear." an et ".$nbMonth." mois.";  
         } else {
             return "Dans ".$nbYear." ans et ".$nbMonth." mois.";
         }
