@@ -1,0 +1,151 @@
+root {
+  --col-secondaire-ciel: #07A5E2;    /* Focus & Accents */
+  --col-dominante-outremer: #2B7BAA; /* Labels & Bordures */
+  --col-bouton-cobalt: #051D7A;      /* Boutons & Textes forts */
+  --col-fond-blanc: #ffffff;         /* Fond */
+}
+
+/* Mise en forme du conteneur Formulaire */
+form {
+  background-color: var(--col-fond-blanc);
+  max-width: 450px;           /* Largeur idéale pour la lecture */
+  margin: 40px auto;          /* Centré sur la page */
+  padding: 30px;
+  border-radius: 8px;         /* Coins légèrement arrondis */
+  box-shadow: 0 4px 15px rgba(5, 29, 122, 0.15); /* Ombre légère teintée de Cobalt */
+  
+  /* Gestion de la disposition (remplace les <br>) */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;                  /* Espace entre les éléments */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* On cache les <br> du code HTML original pour utiliser le gap flexbox plus propre */
+form br {
+  display: none;
+}
+
+/* Style des Labels */
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--col-dominante-outremer); /* Bleu Outremer */
+  margin-bottom: -10px; /* Rapproche le label du champ */
+}
+
+/* Style des Champs (Input & Select) */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+  padding: 12px;
+  border: 2px solid #e0e0e0; /* Gris très clair par défaut */
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--col-bouton-cobalt); /* Texte saisi en Cobalt pour la lisibilité */
+  background-color: #f9fbfd; /* Fond très légèrement bleuté */
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box; /* S'assure que le padding ne casse pas la largeur */
+}
+
+/* État Focus (Quand on clique dans le champ) */
+input:focus,
+select:focus {
+  border-color: var(--col-secondaire-ciel); /* Bordure devient Bleu Clair */
+  outline: none;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(7, 165, 226, 0.2); /* Halo lumineux Bleu Clair */
+}
+
+/* Style du select spécifiquement */
+select {
+  appearance: none; /* Supprime le style par défaut du navigateur */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%232B7BAA%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px top 50%;
+  background-size: 12px auto;
+  cursor: pointer;
+}
+
+/* Message d'information (div summary) */
+#summary {
+  font-size: 0.85rem;
+  color: var(--col-dominante-outremer);
+  font-style: italic;
+  margin-top: -5px;
+}
+
+/* Bouton de soumission */
+button[type="submit"] {
+  margin-top: 10px;
+  background-color: var(--col-bouton-cobalt); /* Fond Cobalt */
+  color: #ffffff;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Survol du bouton */
+button[type="submit"]:hover {
+  background-color: var(--col-dominante-outremer); /* Devient Outremer au survol */
+}
+
+table {
+  border-collapse: collapse; /* Fusionne les bordures */
+  width: 100%;        /* Essaie de prendre toute la place... */
+  max-width: 70%;     /* ...mais s'arrête impérativement à 70% */
+  margin: 25px auto;
+  font-size: 0.95rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 8px 8px 0 0; /* Arrondi sur le haut uniquement */
+  overflow: hidden; /* Nécessaire pour que l'arrondi fonctionne sur le header */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* En-tête du tableau (<thead>) */
+table thead tr {
+  background-color: var(--col-dominante-outremer); /* Fond Outremer */
+  color: var(--col-fond-blanc); /* Texte Blanc */
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Cellules d'en-tête (<th>) et de corps (<td>) */
+table th,
+table td {
+  padding: 12px 15px;
+}
+
+/* Couleur du texte dans le corps du tableau */
+table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  color: var(--col-bouton-cobalt); /* Texte Cobalt pour la lisibilité */
+}
+
+/* Lignes alternées (Zebra Striping) */
+/* Les lignes paires auront un fond très légèrement bleuté */
+table tbody tr:nth-of-type(even) {
+  background-color: #f3f8fb; 
+}
+
+/* Ligne de séparation finale */
+table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--col-dominante-outremer);
+}
+
+/* Effet au survol de la souris (Hover) */
+table tbody tr:hover {
+  background-color: rgba(7, 165, 226, 0.15); /* Bleu ciel avec transparence */
+  color: var(--col-bouton-cobalt);
+  cursor: default;
+  font-weight: 500; /* Légère mise en gras pour accentuer la ligne */
+}
