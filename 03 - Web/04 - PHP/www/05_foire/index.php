@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr-FR">
 
@@ -15,21 +18,32 @@
     require './src/dao/DepartmentRepository.php';
     require './src/dao/CandidateRepository.php';
     require './src/controllers/CtrlInscription.php';
+    require './src/controllers/CtrlAccueil.php';
+    require './src/controllers/CtrlLogin.php';
+
+    //require './src/views/home.php'
     
     if (isset($_GET["page"])) {
       $path = $_GET["page"]??"home";
     } else {
       $path = "home";
     }
+
     switch ($path) {
       case 'inscription':
-        CtrlInscription();
+        ctrlInscription();
         break;
       case 'home':
-        include './src/views/home.php';
+        ctrlAccueil();
+        break;
+      case 'login':
+        ctrlLogin();
+        break;
+      case 'logged':
+        include "./src/views/logged.php";
         break;
       default:
-        include './src/views/home.php';
+        ctrlAccueil();
         break;
     }
 

@@ -1,5 +1,5 @@
 <?php
-    function CtrlInscription() {
+    function ctrlInscription() {
         $objDept = new DepartmentRepository();
         $objCandidat = new CandidateRepository();
 

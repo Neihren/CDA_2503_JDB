@@ -1,0 +1,79 @@
+/* Styles pour le corps de la page (Body) */
+body {
+    background-color: #f4f4f4; /* Un fond gris très clair pour faire ressortir le formulaire */
+    display: flex; /* Utilisation de Flexbox pour centrer le contenu */
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical (si nécessaire, ou ajouter min-height: 100vh) */
+    min-height: 100vh; /* S'assurer que le corps prend toute la hauteur de la vue */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Styles pour le formulaire */
+form {
+    background-color: #ffffff; /* Fond Blanc Formulaire */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Une légère ombre pour un effet de profondeur */
+    width: 100%;
+    max-width: 450px; /* Limite la largeur du formulaire pour un meilleur rendu */
+    /* Mise en forme Flexbox pour organiser les éléments à l'intérieur */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacement entre les groupes d'éléments */
+}
+
+/* Styles pour les étiquettes et les champs de saisie */
+label {
+    font-weight: bold;
+    color: #2B7BAA; /* Couleur Bleu foncée dominante (Outremer) pour les labels */
+    margin-bottom: 5px;
+    display: block; /* S'assurer que chaque label prend sa propre ligne */
+}
+
+/* Styles pour les champs de saisie (input et select) */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #07A5E2; /* Bordure Bleu clair (secondaire) */
+    border-radius: 4px;
+    box-sizing: border-box; /* S'assurer que le padding n'augmente pas la largeur totale */
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Styles pour le bouton de soumission */
+button[type="submit"] {
+    background-color: #051D7A; /* Couleur Bleu bouton cobalt */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease; /* Animation au survol */
+}
+
+button[type="submit"]:hover {
+    background-color: #07A5E2; /* Bleu clair au survol */
+}
+
+/* Styles pour le message de résumé/note */
+#summary {
+    font-size: 0.9em;
+    color: #2B7BAA; /* Couleur Bleu foncée dominante (Outremer) */
+    margin-top: 5px;
+    padding: 10px;
+    border-left: 3px solid #07A5E2; /* Petite barre de couleur pour mettre en évidence */
+}
+
+/* Ajustement pour les <br> pour éviter un double espacement avec le gap du formulaire */
+form > br {
+    display: none; /* Cache les balises <br> car le gap gère déjà l'espacement */
+}
