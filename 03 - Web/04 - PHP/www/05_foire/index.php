@@ -14,6 +14,8 @@
     require './src/dao/Dbconnection.php';
     require './src/dao/DepartmentRepository.php';
     require './src/dao/CandidateRepository.php';
+    require './src/controllers/CtrlInscription.php';
+    
     if (isset($_GET["page"])) {
       $path = $_GET["page"]??"home";
     } else {
@@ -21,7 +23,7 @@
     }
     switch ($path) {
       case 'inscription':
-        include './src/views/inscription.php';
+        CtrlInscription();
         break;
       case 'home':
         include './src/views/home.php';

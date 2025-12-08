@@ -21,6 +21,14 @@ class RestaurantRepository
         return $data;
     }
 
+    public function searchAllJSON() : void {
+        $date = [];
+        $rq = "Select id, nom, adresse, prix , commentaire, note, visite from restaurants";
+        $stmt = $this->dbConnect->query($rq);
+        $data = $stmt->fetchAll();
+        $chainedata = json_encode($data,JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        file_put_contents("./API/listeRestos.json", $chainedata, FILE_APPEND);
+    }
 
     public function searchById(int $_id): bool|array
     {

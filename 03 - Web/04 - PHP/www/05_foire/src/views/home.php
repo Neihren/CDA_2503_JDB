@@ -22,7 +22,8 @@
         return $html;
     }
 
+    
+
     $objCandidats = new CandidateRepository();
-    var_dump($objCandidats->searchAll());
     echo displayData($objCandidats->searchAll());
 ?>

@@ -45,8 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php
     echo $msg;
 
-    echo afficherTableau($objResto->searchAll());
-
+    //echo afficherTableau($objResto->searchAll());
+    $objResto->searchAllJSON();
 ?>
 
 

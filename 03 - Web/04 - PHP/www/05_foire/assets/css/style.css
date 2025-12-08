@@ -81,11 +81,11 @@ select {
 /* Bouton de soumission */
 button[type="submit"] {
   margin-top: 10px;
-  background-color: var(--col-bouton-cobalt); /* Fond Cobalt */
-  color: #ffffff;
+  color: var(--col-bouton-cobalt);
   padding: 14px 20px;
-  border: none;
+  border: 1px;
   border-radius: 5px;
+  border-color: var(--col-bouton-cobalt);
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;

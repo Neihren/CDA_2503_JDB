@@ -1,41 +1,33 @@
 <?php
-require "./src/dao/Dbconnexion.php";
-require "./src/dao/RestaurantRepository.php";
-$objResto=new RestaurantRepository();
+    require "./src/dao/Dbconnexion.php";
+    require "./src/dao/RestaurantRepository.php";
+    $objResto = new RestaurantRepository();
 
-$msg="";
-if($_SERVER["REQUEST_METHOD"]=="POST"){
-      if (!empty($_POST["nom"]) && !empty($_POST["adresse"]) && !empty($_POST["prix"]) && !empty($_POST["commentaire"]) && !empty($_POST["note"]) && !empty($_POST
-     ["visite"]) ) {
-           
+    $msg = "";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (!empty($_POST["nom"]) && !empty($_POST["adresse"]) && !empty($_POST["prix"]) && !empty($_POST["commentaire"]) && !empty($_POST["note"]) && !empty($_POST["visite"])) {
             try {
-            $ddate = new DateTime($_POST["visite"]);
-            $currentDate = new DateTime();
-            if ($ddate > $currentDate) {
-                throw new Exception('La date saisie doit être avant aujourd\'hui !');
-            };
-        } catch (Exception $e) {
-            throw new Exception('Erreur de format de la date : ' . $e->getMessage());
-        }
-
-        $test= $objResto->createRestaurant($_POST["nom"],$_POST["adresse"], $_POST["prix"],$_POST["commentaire"],$_POST["note"],$ddate) ;   
-        if ($test) {
-          header('Location:http://localhost/restaurant/index.php');
-exit;
-        }
-        else {
-            $msg="erreur d'intégration dans la table";
-        }
-
-           
+                $ddate = new DateTime($_POST["visite"]);
+                $currentDate = new DateTime();
+                if ($ddate > $currentDate) {
+                    throw new Exception('La date saisie doit être avant aujourd\'hui !');
+                };
+            } catch (Exception $e) {
+                throw new Exception('Erreur de format de la date : ' . $e->getMessage());
+            }
+            $test = $objResto->createRestaurant($_POST["nom"], $_POST["adresse"], $_POST["prix"], $_POST["commentaire"], $_POST["note"], $ddate);
+            if ($test) {
+                header('Location:http://localhost/restaurant/index.php');
+                exit;
+            } else {
+                $msg = "erreur d'intégration dans la table";
+            }
         } else {
             $msg = "Veuillez remplir toutes les zones du formulaire :";
         }
     } else {
         $msg = "Veuillez utiliser le formulaire suivant :";
     }
-
-
 ?>
 
 <!DOCTYPE html>
