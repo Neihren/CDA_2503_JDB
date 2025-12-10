@@ -1,4 +1,8 @@
 <?php
+    
+    namespace src\dao;
+    use \PDO;
+    use \Exception;
     class DepartmentRepository {
         
         private ?PDO $dbConnect;

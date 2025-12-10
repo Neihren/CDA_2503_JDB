@@ -1,4 +1,5 @@
 <?php
+    use src\dao\CandidateRepository;    
 
     function displayData(array $data) : string {
         $html = "<div style='overflow-x:auto;'><table>

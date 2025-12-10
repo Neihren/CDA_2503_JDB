@@ -14,14 +14,14 @@
 
 <body>
   <?php
-    require './src/dao/Dbconnection.php';
-    require './src/dao/DepartmentRepository.php';
-    require './src/dao/CandidateRepository.php';
-    require './src/controllers/CtrlInscription.php';
-    require './src/controllers/CtrlAccueil.php';
-    require './src/controllers/CtrlLogin.php';
-
-    //require './src/views/home.php'
+    use src\dao\CandidateRepository;
+    use src\dao\DepartmentRepository;
+    use src\dao\Dbconnection;
+    use src\controllers\CtrlAccueil;
+    use src\controllers\CtrlCompte;
+    use src\controllers\CtrlInscription;
+    use src\controllers\CtrlLogin;
+    require './vendor/autoload.php';
     
     if (isset($_GET["page"])) {
       $path = $_GET["page"]??"home";
@@ -31,19 +31,24 @@
 
     switch ($path) {
       case 'inscription':
-        ctrlInscription();
+        $objIns = new CtrlInscription();
+        $objIns->ctrlInscription();
         break;
       case 'home':
-        ctrlAccueil();
+        $objHome = new CtrlAccueil();
+        $objHome->ctrlAccueil();
         break;
       case 'login':
-        ctrlLogin();
+        $objLogin = new CtrlLogin();
+        $objLogin->ctrlLogin();
         break;
       case 'logged':
-        include "./src/views/logged.php";
+        $objCompte = new CtrlCompte();
+        $objCompte->ctrlCompte();
         break;
       default:
-        ctrlAccueil();
+        $objHome = new CtrlAccueil();
+        $objHome->ctrlAccueil();
         break;
     }
 

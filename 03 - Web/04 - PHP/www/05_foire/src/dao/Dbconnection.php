@@ -1,4 +1,8 @@
 <?php
+
+    namespace src\dao;
+    use \PDO;
+    use \Exception;
     final class Dbconnection {
         private static ?PDO $connexion = null;
         private static $host;

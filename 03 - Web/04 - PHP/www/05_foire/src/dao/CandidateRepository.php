@@ -1,5 +1,8 @@
 <?php
 
+namespace src\dao;
+use \PDO;
+use \Exception;
 class CandidateRepository
 {
     private ?PDO $dbConnect;
@@ -46,38 +49,55 @@ class CandidateRepository
     }
 
     public function verifSignIn(string $_email, $_password) : array | bool {
-    $email = filter_var($_email, FILTER_VALIDATE_EMAIL);
-    $password = trim($_password);
-    $query = "SELECT pass_user
-              FROM candidats
-              WHERE mail_user = :email;";
-    $PDOstatement = $this->dbConnect->prepare($query);
-    $PDOstatement->bindValue(":email", $email, PDO::PARAM_STR);
-    if (! $PDOstatement->execute()) {
-        return false;
-    }
-    $hash = $PDOstatement->fetchColumn();
-    if ($hash === false) {
-        return false;
-    }
-    if (password_verify($password, $hash)) {
-        $query = "SELECT
-                    lastname_user,
-                    firstname_user,
-                    mail_user,
-                    departement_user,
-                    age_user
-                  FROM candidats
-                  WHERE mail_user = :email;";
+        $email = filter_var($_email, FILTER_VALIDATE_EMAIL);
+        $password = trim($_password);
+        $query =   "SELECT 
+                        pass_user
+                    FROM 
+                        candidats
+                    WHERE 
+                        mail_user = :email;";
         $PDOstatement = $this->dbConnect->prepare($query);
         $PDOstatement->bindValue(":email", $email, PDO::PARAM_STR);
         if (! $PDOstatement->execute()) {
             return false;
         }
-        return $PDOstatement->fetch(PDO::FETCH_ASSOC);
+        $hash = $PDOstatement->fetchColumn();
+        if ($hash === false) {
+            return false;
+        }
+        if (password_verify($password, $hash)) {
+            $query = "SELECT
+                        lastname_user,
+                        firstname_user,
+                        mail_user,
+                        departement_user,
+                        age_user
+                    FROM 
+                        candidats
+                    WHERE
+                        mail_user = :email;";
+            $PDOstatement = $this->dbConnect->prepare($query);
+            $PDOstatement->bindValue(":email", $email, PDO::PARAM_STR);
+            if (! $PDOstatement->execute()) {
+                return false;
+            }
+            return $PDOstatement->fetch(PDO::FETCH_ASSOC);
+        }
+        return false;
     }
-    return false;
-}
+
+    // public function verifSign(string $_mail, string $_pass) : array | bool {
+    //     $query = "SELECT * FROM candidats WHERE mail_user = :mail_user";
+    //     $stmt = $this->dbConnect->prepare($query);
+    //     $stmt->execute([':mail_user'=>$_mail]);
+    //     $user = $stmt->fetch();
+    //     $nligne = $stmt->rowCount();
+    //     if ($nligne == 1 && password_verify($_pass, $user['pass_user'])) {
+    //         return $user;
+    //     }
+    //     return 0;
+    // }
 
     public function createCandidate(string $_name, string $_firstname, string $_email, string $_password, int $_dep, int $_age): bool
     {

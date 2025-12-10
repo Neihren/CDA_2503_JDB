@@ -1,7 +1,14 @@
 <?php
+    namespace src\controllers;
 
-    function ctrlAccueil() {
-        $objCandidat = new CandidateRepository();
-        $dataCandidat = $objCandidat->searchAll();
-        include "./src/views/home.php";
+    class CtrlAccueil {
+        public function __construct()
+        {
+        }
+
+        public function ctrlAccueil() : void {
+            $objCandidat = new \src\dao\CandidateRepository();
+            $dataCandidat = $objCandidat->searchAll();
+            include "./src/views/home.php";
     }
+}
