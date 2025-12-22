@@ -242,6 +242,11 @@ DELIMITER |
 	END|
 DELIMITER ;
 
+INSERT INTO
+	candidats (lastname_user, firstname_user, mail_user, pass_user, departement_user, age_user, archive_user)
+VALUES
+	('Haddock', 'Gabriel', 'gabrel.martin@email.fr', 'Gabriel2024!', 75, 24, 0);
+
 DELETE FROM
 	candidats
 WHERE
@@ -254,3 +259,5 @@ FROM
 	departements;
 	
 TRUNCATE TABLE candidats;
+
+SELECT lastname_user, firstname_user, mail_user, departement_user, age_user FROM candidats
