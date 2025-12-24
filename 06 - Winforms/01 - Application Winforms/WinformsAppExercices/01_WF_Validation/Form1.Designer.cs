@@ -35,15 +35,14 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(59, 29);
+            label1.Location = new Point(26, 34);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(0, 15);
             label1.TabIndex = 0;
-            label1.Text = "label1";
             // 
             // button1
             // 
-            button1.Location = new Point(47, 101);
+            button1.Location = new Point(78, 100);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
@@ -54,9 +53,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(336, 136);
+            ClientSize = new Size(234, 141);
             Controls.Add(button1);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MaximumSize = new Size(250, 180);
+            MinimizeBox = false;
+            MinimumSize = new Size(250, 180);
             Name = "Form_validation";
             ShowIcon = false;
             Text = "Validation effectuée";
