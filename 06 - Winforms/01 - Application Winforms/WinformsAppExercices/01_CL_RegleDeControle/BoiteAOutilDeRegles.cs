@@ -62,20 +62,22 @@ namespace _01_CL_RegleDeControle
             return _input.Length > 20 ? true : false;
         }
 
-
-
-
-        public static bool IsMontantValid(string _montant, out decimal montant)
+        public static bool IsAmountNegative(string _amount)
         {
-            //_montant = _montant.Replace('.', ',');
-            //if (!Regex.IsMatch(_montant, @"^\d+((\,|\.)\d+)?$"))
+            return _amount.Contains("-");
+        }
+
+        public static bool IsAmountValid(string _amount, out decimal amount)
+        {
+            //_amount = _amount.Replace('.', ',');
+            //if (!Regex.IsMatch(_amount, @"^\d+((\,|\.)\d+)?$"))
             //{
-            //    montant = 0;
+            //    amount = 0;
             //    return false;
             //}
-            //return Decimal.TryParse(_montant, CultureInfo.GetCultureInfo("en-US"),out montant);
-            
-            return Decimal.TryParse(_montant, CultureInfo.CurrentCulture, out montant);
+            //return Decimal.TryParse(_amount, CultureInfo.GetCultureInfo("en-US"),out amount);
+
+            return Decimal.TryParse(_amount, CultureInfo.CurrentCulture, out amount);
         }
 
         public static bool IsCodePostalValid(string _codePostal)

@@ -2,12 +2,13 @@
 
 internal class Program
 {
-    static void Main(string[] args)
+    
+    static void Main()
     {
         // Validation Nom
         string nameInput = "Dupont";
         bool nameInputValid = false;
-        nameInputValid = BoiteAOutilDeRegles.IsNameAlphabetic(nameInput);
+        nameInputValid = BoiteAOutilDeRegles.IsNameNotAlphabetic(nameInput);
         Console.WriteLine($"Nom : {nameInput}");
         Console.WriteLine(nameInputValid);
         Console.WriteLine(nameInput);
@@ -15,7 +16,7 @@ internal class Program
         // Validation Nom = caratères spéciaux
         nameInput = "François L'Écuyer";
         nameInputValid = false;
-        nameInputValid = BoiteAOutilDeRegles.IsNameAlphabetic(nameInput);
+        nameInputValid = BoiteAOutilDeRegles.IsNameNotAlphabetic(nameInput);
         Console.WriteLine($"Nom : {nameInput}");
         Console.WriteLine(nameInputValid);
         Console.WriteLine(nameInput);
@@ -23,7 +24,7 @@ internal class Program
         // Validation Nom = vide
         nameInput = "";
         nameInputValid = false;
-        nameInputValid = BoiteAOutilDeRegles.IsNameAlphabetic(nameInput);
+        nameInputValid = BoiteAOutilDeRegles.IsEmpty(nameInput);
         Console.WriteLine($"Nom : {nameInput}");
         Console.WriteLine(nameInputValid);
         Console.WriteLine(nameInput);
@@ -31,7 +32,7 @@ internal class Program
         // Validation Nom = Tiret
         nameInput = "Jean-Martin";
         nameInputValid = false;
-        nameInputValid = BoiteAOutilDeRegles.IsNameAlphabetic(nameInput);
+        nameInputValid = BoiteAOutilDeRegles.IsNameNotAlphabetic(nameInput);
         Console.WriteLine($"Nom : {nameInput}");
         Console.WriteLine(nameInputValid);
         Console.WriteLine(nameInput);
@@ -39,7 +40,7 @@ internal class Program
         // Validation Nom = chiffre
         nameInput = "Jean-Mart1";
         nameInputValid = false;
-        nameInputValid = BoiteAOutilDeRegles.IsNameAlphabetic(nameInput);
+        nameInputValid = BoiteAOutilDeRegles.IsNameNotAlphabetic(nameInput);
         Console.WriteLine($"Nom : {nameInput}");
         Console.WriteLine(nameInputValid);
         Console.WriteLine(nameInput);
@@ -48,7 +49,7 @@ internal class Program
         // Validation Nom = espace début
         nameInput = " Jean-Mart";
         nameInputValid = false;
-        nameInputValid = BoiteAOutilDeRegles.IsNameStartingSpace(nameInput);
+        nameInputValid = BoiteAOutilDeRegles.IsStartingSpace(nameInput);
         Console.WriteLine($"Nom : {nameInput}");
         Console.WriteLine(nameInputValid);
         Console.WriteLine(nameInput);
@@ -56,7 +57,7 @@ internal class Program
         // Validation Nom = espace fin
         nameInput = "Jean-Mart ";
         nameInputValid = false;
-        nameInputValid = BoiteAOutilDeRegles.IsNameEndingSpace(nameInput);
+        nameInputValid = BoiteAOutilDeRegles.IsEndingSpace(nameInput);
         Console.WriteLine($"Nom : {nameInput}");
         Console.WriteLine(nameInputValid);
         Console.WriteLine(nameInput);
@@ -66,7 +67,7 @@ internal class Program
         string dateInput = "22/12/2025";
         DateTime dateOuput = DateTime.MinValue;
         bool dateValid = false;
-        dateValid = BoiteAOutilDeRegles.IsDateValid(dateInput, out dateOuput);
+        dateValid = BoiteAOutilDeRegles.IsDateFormatValid(dateInput, out dateOuput);
         Console.WriteLine("Date :");
         Console.WriteLine(dateValid);
         Console.WriteLine(dateOuput);
@@ -75,7 +76,7 @@ internal class Program
         // Validation Code Postal
         string codePostalInput = "77480";
         bool codePostalInputValid = false;
-        
+
         codePostalInputValid = BoiteAOutilDeRegles.IsCodePostalValid(codePostalInput);
         Console.WriteLine("Code Postal :");
         Console.WriteLine(codePostalInput);
@@ -86,8 +87,8 @@ internal class Program
         string montantInput = "45157,445";
         bool montantInputValid = false;
         decimal montantOutput = decimal.MinValue;
-        montantInputValid = BoiteAOutilDeRegles.IsMontantValid(montantInput, out montantOutput);
-        
+        montantInputValid = BoiteAOutilDeRegles.IsAmountValid(montantInput, out montantOutput);
+
         Console.WriteLine("Montant :");
         Console.WriteLine(montantInputValid);
         Console.WriteLine(montantOutput);

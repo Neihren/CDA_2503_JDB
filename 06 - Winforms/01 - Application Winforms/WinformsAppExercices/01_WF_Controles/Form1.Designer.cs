@@ -65,7 +65,7 @@
             label_Montant.Location = new Point(12, 87);
             label_Montant.Name = "label_Montant";
             label_Montant.Size = new Size(53, 15);
-            label_Montant.TabIndex = 2;
+            label_Montant.TabIndex = 4;
             label_Montant.Text = "Montant";
             // 
             // label_CodePostal
@@ -74,7 +74,7 @@
             label_CodePostal.Location = new Point(12, 116);
             label_CodePostal.Name = "label_CodePostal";
             label_CodePostal.Size = new Size(70, 15);
-            label_CodePostal.TabIndex = 3;
+            label_CodePostal.TabIndex = 6;
             label_CodePostal.Text = "Code Postal";
             // 
             // label_DateFormat
@@ -83,7 +83,7 @@
             label_DateFormat.Location = new Point(230, 58);
             label_DateFormat.Name = "label_DateFormat";
             label_DateFormat.Size = new Size(87, 15);
-            label_DateFormat.TabIndex = 4;
+            label_DateFormat.TabIndex = 1;
             label_DateFormat.Text = "(JJ/MM/AAAA)";
             // 
             // textBox_Nom
@@ -146,7 +146,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(385, 182);
+            ClientSize = new Size(401, 189);
             Controls.Add(btn_Effacer);
             Controls.Add(btn_Valider);
             Controls.Add(textBox_CodePostal);
@@ -159,7 +159,7 @@
             Controls.Add(label_Date);
             Controls.Add(label_Nom);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Les Contrôles";
             FormClosing += Form1_FormClosing;
             ResumeLayout(false);
             PerformLayout();

@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\01_CA_Controles\01_CA_Controles.csproj" />
     <ProjectReference Include="..\01_CL_Achat\01_CL_Achat.csproj" />
     <ProjectReference Include="..\01_CL_RegleDeControle\01_CL_RegleDeControle.csproj" />
   </ItemGroup>
