@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_CL_Achat", "01_CL_Achat\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_CA_Controles", "01_CA_Controles\01_CA_Controles.csproj", "{6A1B442C-738F-4747-86B9-816AF11A3EB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WF_CheckBoxEtRadioButton", "WF_CheckBoxEtRadioButton\WF_CheckBoxEtRadioButton.csproj", "{CFE3D583-D1B6-42DE-97A4-4792F0035BA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WF_CheckBoxEtRadioButton", "WF_CheckBoxEtRadioButton\WF_CheckBoxEtRadioButton.csproj", "{CFE3D583-D1B6-42DE-97A4-4792F0035BA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_WF_Validation", "01_WF_Validation\01_WF_Validation.csproj", "{932F2F35-DCBD-40BA-A94E-1D888B369C81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_WF_Validation", "01_WF_Validation\01_WF_Validation.csproj", "{932F2F35-DCBD-40BA-A94E-1D888B369C81}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_WF_ControlesEP", "01_WF_ControlesEP\01_WF_ControlesEP.csproj", "{5FE40330-5E0C-4EE9-BA4A-45E3FA29E4AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{932F2F35-DCBD-40BA-A94E-1D888B369C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{932F2F35-DCBD-40BA-A94E-1D888B369C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{932F2F35-DCBD-40BA-A94E-1D888B369C81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FE40330-5E0C-4EE9-BA4A-45E3FA29E4AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FE40330-5E0C-4EE9-BA4A-45E3FA29E4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FE40330-5E0C-4EE9-BA4A-45E3FA29E4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FE40330-5E0C-4EE9-BA4A-45E3FA29E4AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{27DDC77B-E9AA-4065-9D71-E123C3FF5D94} = {FC2F0634-8DAD-4D09-85C3-7C0D6EFA2263}
 		{6A1B442C-738F-4747-86B9-816AF11A3EB5} = {FC2F0634-8DAD-4D09-85C3-7C0D6EFA2263}
 		{932F2F35-DCBD-40BA-A94E-1D888B369C81} = {FC2F0634-8DAD-4D09-85C3-7C0D6EFA2263}
+		{5FE40330-5E0C-4EE9-BA4A-45E3FA29E4AB} = {FC2F0634-8DAD-4D09-85C3-7C0D6EFA2263}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE6C0A11-A614-4FA8-BD47-B0651E81B4D1}
