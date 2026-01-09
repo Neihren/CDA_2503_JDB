@@ -1,13 +1,26 @@
 using _01_CL_Achat;
 using _01_CL_RegleDeControle;
+using _01_WF_Validation;
+using System.ComponentModel;
 
 namespace _01_WF_ControlesEP
 {
     public partial class Form1 : Form
     {
+        private DateTime dateValidee;
+        private decimal montantValide;
         public Form1()
         {
             InitializeComponent();
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x10) // The upper right "X" was clicked
+            {
+                AutoValidate = AutoValidate.Disable; //Deactivate all validations
+            }
+            base.WndProc(ref m);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -23,7 +36,7 @@ namespace _01_WF_ControlesEP
             }
         }
 
-        private void btn_Effacer_Click(object sender, EventArgs e)
+        private void Btn_Effacer_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Vider le formulaire ?",
                                                 "Effacer le formulaire",
@@ -39,103 +52,178 @@ namespace _01_WF_ControlesEP
             }
         }
 
-        private void btn_Valider_Click(object sender, EventArgs e)
+        private void TextBox_Nom_Validating(object sender, CancelEventArgs e)
         {
-
-            if (BoiteAOutilDeRegles.IsEmpty(textBox_Nom.Text))
+            if (BoiteAOutilDeRegles.IsStartingSpace(textBox_Nom.Text))
             {
-                MessageBox.Show("Le nom ne peux pas être vide.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }
-            else if (BoiteAOutilDeRegles.IsStartingSpace(textBox_Nom.Text))
-            {
-                MessageBox.Show("Le nom ne peux pas commencer par un espace.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                e.Cancel = true;
+                MessageBox.Show("Pas d'espace avant le nom");
             }
             else if (BoiteAOutilDeRegles.IsEndingSpace(textBox_Nom.Text))
             {
-                MessageBox.Show("Le nom ne peux pas terminer par un espace.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                e.Cancel = true;
+                MessageBox.Show("Pas d'espace après le nom");
+            }
+            else if (BoiteAOutilDeRegles.IsEmpty(textBox_Nom.Text))
+            {
+                e.Cancel = true;
+                MessageBox.Show("Vous devez renseigner un nom");
             }
             else if (BoiteAOutilDeRegles.IsMoreThan30(textBox_Nom.Text))
             {
-                MessageBox.Show("Le nom ne doit pas depasser 30 caratères.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                e.Cancel = true;
+                MessageBox.Show("Le nom doit ne doit pas dépasser 30 caractères");
             }
             else if (BoiteAOutilDeRegles.IsNameLessThan2(textBox_Nom.Text))
             {
-                MessageBox.Show("Le nom doit faire plus de 2 caractères.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                e.Cancel = true;
+                MessageBox.Show("Le nom doit faire plus de 2 caractères");
             }
             else if (BoiteAOutilDeRegles.IsNameNotAlphabetic(textBox_Nom.Text))
             {
-                MessageBox.Show("Le nom ne doit contenir que les caractères a-z, A-Z, caratères accentués, -, ',  ,.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                e.Cancel = true;
+                MessageBox.Show("Merci de ne renseigner que des caractères autorisés (Minuscules, Majuscules, -, ',  .");
             }
-            else if (BoiteAOutilDeRegles.IsEmpty(textBox_Date.Text))
+        }
+
+        private void TextBox_Date_Validating(object sender, CancelEventArgs e)
+        {
+            try
             {
-                MessageBox.Show("La date ne peux pas être vide.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                if (BoiteAOutilDeRegles.IsStartingSpace(textBox_Date.Text))
+                {
+                    e.Cancel = true;
+                    errorProviderDate.SetError(textBox_Date, "Il ne doit pas y avoir d'espaces avant la date");
+                }
+                else if (BoiteAOutilDeRegles.IsEndingSpace(textBox_Date.Text))
+                {
+                    e.Cancel = true;
+                    errorProviderDate.SetError(textBox_Date, "Pas d'espace après la date");
+                }
+                else if (BoiteAOutilDeRegles.IsEmpty(textBox_Date.Text))
+                {
+                    e.Cancel = true;
+                    errorProviderDate.SetError(textBox_Date, "Vous devez renseigner une date");
+                }
+                else if (!BoiteAOutilDeRegles.IsDateFormatValid(textBox_Date.Text, out dateValidee))
+                {
+                    e.Cancel = true;
+                    errorProviderDate.SetError(textBox_Date, "Vous devez renseigner une date valide");
+                }
+                else if (BoiteAOutilDeRegles.IsDateInPast(dateValidee))
+                {
+                    e.Cancel = true;
+                    errorProviderDate.SetError(textBox_Date, "La date ne doit pas être dans le passé");
+                }
+                else
+                {
+                    errorProviderDate.SetError(textBox_Date, "");
+                }
             }
-            else if (BoiteAOutilDeRegles.IsStartingSpace(textBox_Date.Text))
+            catch
             {
-                MessageBox.Show("La date ne peut pas commencer par un espace.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                e.Cancel = true;
+                errorProviderDate.SetError(textBox_Date, "Saisie invalide");
             }
-            else if (BoiteAOutilDeRegles.IsEndingSpace(textBox_Date.Text))
+        }
+
+        private void TextBox_Montant_Validating(object sender, CancelEventArgs e)
+        {
+            try
             {
-                MessageBox.Show("La date ne peut pas terminer par un espace.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                if (BoiteAOutilDeRegles.IsStartingSpace(textBox_Montant.Text))
+                {
+                    e.Cancel = true;
+                    errorProviderMontant.SetError(textBox_Montant, "Il ne doit pas y avoir d'espaces avant le montant");
+                }
+                else if (BoiteAOutilDeRegles.IsEndingSpace(textBox_Montant.Text))
+                {
+                    e.Cancel = true;
+                    errorProviderMontant.SetError(textBox_Montant, "Pas d'espace après le montant");
+                }
+                else if (BoiteAOutilDeRegles.IsEmpty(textBox_Montant.Text))
+                {
+                    e.Cancel = true;
+                    errorProviderMontant.SetError(textBox_Montant, "Vous devez renseigner un montant");
+                }
+                else if (BoiteAOutilDeRegles.IsMoreThan20(textBox_Montant.Text))
+                {
+                    e.Cancel = true;
+                    errorProviderMontant.SetError(textBox_Montant, "Le montant renseigné ne doit pas dépasser 20 caractères");
+                }
+                else if (BoiteAOutilDeRegles.IsAmountNegative(textBox_Montant.Text))
+                {
+                    e.Cancel = true;
+                    errorProviderMontant.SetError(textBox_Montant, "Le montant ne doit pas être négatif");
+                }
+                else if (!BoiteAOutilDeRegles.IsAmountValid(textBox_Montant.Text, out montantValide))
+                {
+                    e.Cancel = true;
+                    errorProviderMontant.SetError(textBox_Montant, "Vous devez renseigner un montant valide");
+                }
+                else
+                {
+                    errorProviderMontant.SetError(textBox_Montant, "");
+                }
             }
-            else if (!BoiteAOutilDeRegles.IsDateFormatValid(textBox_Date.Text, out DateTime dateOutput))
+            catch
             {
-                MessageBox.Show("La date saisie n'est pas valide.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                e.Cancel = true;
+                errorProviderMontant.SetError(textBox_Montant, "Saisie invalide");
             }
-            else if (BoiteAOutilDeRegles.IsDateInPast(dateOutput))
+        }
+
+        private void textBox_CodePostal_Validating(object sender, CancelEventArgs e)
+        {
+            try
             {
-                MessageBox.Show("La date saisie ne doit pas être dans le passé.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                if (BoiteAOutilDeRegles.IsStartingSpace(textBox_CodePostal.Text))
+                {
+                    e.Cancel = true;
+                    errorProviderCodePostal.SetError(textBox_CodePostal, "Il ne doit pas y avoir d'espaces avant le code postal");
+                }
+                else if (BoiteAOutilDeRegles.IsEndingSpace(textBox_CodePostal.Text))
+                {
+                    e.Cancel = true;
+                    errorProviderCodePostal.SetError(textBox_CodePostal, "Pas d'espace après le code postal");
+                }
+                else if (BoiteAOutilDeRegles.IsEmpty(textBox_CodePostal.Text))
+                {
+                    e.Cancel = true;
+                    errorProviderCodePostal.SetError(textBox_CodePostal, "Vous devez renseigner un code postal");
+                }
+                else if (!BoiteAOutilDeRegles.IsCodePostalValid(textBox_CodePostal.Text))
+                {
+                    e.Cancel = true;
+                    errorProviderCodePostal.SetError(textBox_CodePostal, "Vous devez renseigner un code postal valide");
+                }
+                else
+                {
+                    errorProviderCodePostal.SetError(textBox_CodePostal, "");
+                }
             }
-            else if (BoiteAOutilDeRegles.IsEmpty(textBox_Montant.Text))
+            catch
             {
-                MessageBox.Show("Le montant ne peux pas être vide.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                e.Cancel = true;
+                errorProviderCodePostal.SetError(textBox_CodePostal, "Saisie invalide");
             }
-            else if (BoiteAOutilDeRegles.IsStartingSpace(textBox_Montant.Text))
+        }
+
+        private void btn_Valider_Click(object sender, EventArgs e)
+        {
+            // Vérifie que tous les champs sont valides.
+            if (this.ValidateChildren())
             {
-                MessageBox.Show("Le montant ne peux pas commencer par un espace.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }
-            else if (BoiteAOutilDeRegles.IsEndingSpace(textBox_Montant.Text))
-            {
-                MessageBox.Show("Le montant ne peux pas terminer par un espace.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }
-            else if (BoiteAOutilDeRegles.IsAmountNegative(textBox_Montant.Text))
-            {
-                MessageBox.Show("Le montant ne peux pas être négatif", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }
-            else if (BoiteAOutilDeRegles.IsAmountValid(textBox_Montant.Text, out decimal amountOutput))
-            {
-                MessageBox.Show("Le montant saisi n'est pas valide", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }
-            else if (BoiteAOutilDeRegles.IsEmpty(textBox_CodePostal.Text))
-            {
-                MessageBox.Show("Le Code Postal ne peux pas être vide.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }
-            else if (BoiteAOutilDeRegles.IsStartingSpace(textBox_CodePostal.Text))
-            {
-                MessageBox.Show("Le Code Postal ne peux pas commencer par un espace.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }
-            else if (BoiteAOutilDeRegles.IsEndingSpace(textBox_CodePostal.Text))
-            {
-                MessageBox.Show("Le Code Postal ne peux pas terminer par un espace.", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }
-            else if (BoiteAOutilDeRegles.IsCodePostalValid(textBox_CodePostal.Text))
-            {
-                MessageBox.Show("Le Code Postal n'est pas valide. Il doit être composé de 5 chiffres", "Erreur", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                Achat nouvelAchat = new Achat(textBox_Nom.Text, dateValidee, montantValide, textBox_CodePostal.Text);
+                Form_validation validation = new Form_validation(nouvelAchat);
+                DialogResult resultat= validation.ShowDialog();
             }
             else
             {
-                string info = "";
-                var listeTriee = this.Controls.OfType<TextBox>().OrderBy(t => t.TabIndex);
-                Achat user1 = new Achat(textBox_Nom.Text, dateOutput, amountOutput, textBox_CodePostal.Text);
-                foreach (TextBox txtbox in listeTriee)
-                {
-                    info += txtbox.Tag + " : " + txtbox.Text + "\n";
-                }
-
-                MessageBox.Show(info, "Validation effectuée",
-                MessageBoxButtons.OK);
-                
+                // Si la validation échoue, les ErrorProviders seront affichés automatiquement
+                MessageBox.Show("Veuillez corriger les erreurs sur le formulaire.", "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
 }
+

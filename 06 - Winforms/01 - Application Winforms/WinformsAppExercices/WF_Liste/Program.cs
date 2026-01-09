@@ -1,4 +1,4 @@
-namespace WF_CheckBoxEtRadioButton
+namespace WF_Liste
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace WF_CheckBoxEtRadioButton
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form_CBRB());
+            Application.Run(new Form_Liste());
         }
     }
 }

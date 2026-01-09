@@ -28,12 +28,12 @@ namespace _01_CL_RegleDeControle
 
         public static bool IsMoreThan30(string _input)
         {
-            return _input.Length > 31 ? true : false;
+            return _input.Length > 31;
         }
 
         public static bool IsNameLessThan2(string _input)
         {
-            return _input.Length < 2 ? true : false;
+            return _input.Length < 2;
         }
         
         public static bool IsNameNotAlphabetic(string _name)
@@ -52,19 +52,25 @@ namespace _01_CL_RegleDeControle
             return true;
         }
 
+        public static (bool, DateTime) IsDateFormatValid(string _date)
+        {
+            bool ok = BoiteAOutilDeRegles.IsDateFormatValid(_date,out DateTime date);
+            return (ok, date);
+        }
+
         public static bool IsDateInPast(DateTime date)
         {
-            return date < DateTime.Today ? true : false;
+            return date < DateTime.Today;
         }
 
         public static bool IsMoreThan20(string _input)
         {
-            return _input.Length > 20 ? true : false;
+            return _input.Length > 20;
         }
 
         public static bool IsAmountNegative(string _amount)
         {
-            return _amount.Contains("-");
+            return _amount.Contains('-');
         }
 
         public static bool IsAmountValid(string _amount, out decimal amount)

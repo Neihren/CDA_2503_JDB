@@ -1,4 +1,4 @@
-namespace WF_CheckBoxEtRadioButton
+namespace WinFormsControlDisBonjour
 {
     public partial class Form1 : Form
     {
@@ -6,6 +6,5 @@ namespace WF_CheckBoxEtRadioButton
         {
             InitializeComponent();
         }
-
     }
 }
