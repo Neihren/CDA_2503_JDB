@@ -50,6 +50,8 @@
             comboBox_Source.Name = "comboBox_Source";
             comboBox_Source.Size = new Size(121, 23);
             comboBox_Source.TabIndex = 0;
+            comboBox_Source.SelectionChangeCommitted += ComboBox_Source_SelectionChangeCommitted;
+            comboBox_Source.TextChanged += ComboBox_Source_TextChanged;
             comboBox_Source.KeyPress += ComboBox_Source_KeyPress;
             // 
             // listBox_Cible
@@ -60,7 +62,7 @@
             listBox_Cible.Name = "listBox_Cible";
             listBox_Cible.Size = new Size(120, 94);
             listBox_Cible.TabIndex = 1;
-            listBox_Cible.SelectedIndexChanged += listBox_Cible_SelectedIndexChanged;
+            listBox_Cible.SelectedIndexChanged += ListBox_Cible_SelectedIndexChanged;
             // 
             // label_Source
             // 
@@ -82,43 +84,51 @@
             // 
             // button_Add
             // 
+            button_Add.Enabled = false;
             button_Add.Location = new Point(175, 44);
             button_Add.Name = "button_Add";
             button_Add.Size = new Size(75, 23);
             button_Add.TabIndex = 4;
             button_Add.Text = ">";
             button_Add.UseVisualStyleBackColor = true;
-            button_Add.Click += button_Add_Click;
+            button_Add.Click += Button_Add_Click;
             // 
             // button_AddAll
             // 
+            button_AddAll.Enabled = false;
             button_AddAll.Location = new Point(175, 73);
             button_AddAll.Name = "button_AddAll";
             button_AddAll.Size = new Size(75, 23);
             button_AddAll.TabIndex = 5;
             button_AddAll.Text = ">>";
             button_AddAll.UseVisualStyleBackColor = true;
+            button_AddAll.Click += Button_AddAll_Click;
             // 
             // button_Remove
             // 
+            button_Remove.Enabled = false;
             button_Remove.Location = new Point(175, 118);
             button_Remove.Name = "button_Remove";
             button_Remove.Size = new Size(75, 23);
             button_Remove.TabIndex = 6;
             button_Remove.Text = "<";
             button_Remove.UseVisualStyleBackColor = true;
+            button_Remove.Click += Button_Remove_Click;
             // 
             // button_RemoveAll
             // 
+            button_RemoveAll.Enabled = false;
             button_RemoveAll.Location = new Point(175, 147);
             button_RemoveAll.Name = "button_RemoveAll";
             button_RemoveAll.Size = new Size(75, 23);
             button_RemoveAll.TabIndex = 7;
             button_RemoveAll.Text = "<<";
             button_RemoveAll.UseVisualStyleBackColor = true;
+            button_RemoveAll.Click += Button_RemoveAll_Click;
             // 
             // button_MoveUp
             // 
+            button_MoveUp.Enabled = false;
             button_MoveUp.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button_MoveUp.Location = new Point(299, 147);
             button_MoveUp.Name = "button_MoveUp";
@@ -130,6 +140,7 @@
             // 
             // button_MoveDown
             // 
+            button_MoveDown.Enabled = false;
             button_MoveDown.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button_MoveDown.Location = new Point(348, 147);
             button_MoveDown.Name = "button_MoveDown";
