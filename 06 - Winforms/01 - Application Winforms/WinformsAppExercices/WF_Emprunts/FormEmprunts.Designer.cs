@@ -47,9 +47,9 @@
             button_Annuler = new Button();
             label_NbRemboursements = new Label();
             label_Amount = new Label();
-            errorProvider1 = new ErrorProvider(components);
+            errorProviderHsError = new ErrorProvider(components);
             groupBox_Taux.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderHsError).BeginInit();
             SuspendLayout();
             // 
             // label_Nom
@@ -118,6 +118,7 @@
             textBox_Capital.Name = "textBox_Capital";
             textBox_Capital.Size = new Size(177, 29);
             textBox_Capital.TabIndex = 6;
+            textBox_Capital.TextChanged += TextBox_Capital_TextChanged;
             // 
             // listBox_Periode
             // 
@@ -185,6 +186,7 @@
             hScrollBar_Duree.Size = new Size(131, 17);
             hScrollBar_Duree.TabIndex = 10;
             hScrollBar_Duree.Value = 1;
+            hScrollBar_Duree.Scroll += HScrollBar_Duree_Scroll;
             hScrollBar_Duree.ValueChanged += HScrollBar_Duree_ValueChanged;
             // 
             // label_NbDuree
@@ -241,9 +243,9 @@
             label_Amount.TabIndex = 15;
             label_Amount.Text = "0,00 €";
             // 
-            // errorProvider1
+            // errorProviderHsError
             // 
-            errorProvider1.ContainerControl = this;
+            errorProviderHsError.ContainerControl = this;
             // 
             // FormEmprunts
             // 
@@ -270,7 +272,7 @@
             Text = "Form1";
             groupBox_Taux.ResumeLayout(false);
             groupBox_Taux.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderHsError).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -295,6 +297,6 @@
         private Button button_Annuler;
         private Label label_NbRemboursements;
         private Label label_Amount;
-        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProviderHsError;
     }
 }
