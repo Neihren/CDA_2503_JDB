@@ -10,127 +10,136 @@ namespace WF_Emprunts
         private const Double Rate8 = 0.08;
         private const Double Rate9 = 0.09;
 
+        private readonly int[] frequencySteps = { 1, 2, 3, 6, 12 };
+
         public FormEmprunts()
         {
             InitializeComponent();
-            listBox_Periode.Items.Add("Mensuelle");
-            listBox_Periode.Items.Add("Bimestrielle");
-            listBox_Periode.Items.Add("Trimestrielle");
-            listBox_Periode.Items.Add("Semestrielle");
-            listBox_Periode.Items.Add("Annuelle");
-            radioButton_7.CheckedChanged += new EventHandler(RadioButtons_CheckedChanged);
-            radioButton_8.CheckedChanged += new EventHandler(RadioButtons_CheckedChanged);
-            radioButton_9.CheckedChanged += new EventHandler(RadioButtons_CheckedChanged);
+            listBox_Periode.Items.AddRange(new object[] {
+                "Mensuelle",
+                "Bimestrielle",
+                "Trimestrielle",
+                "Semestrielle",
+                "Annuelle"
+            });
             curLoan = new Loan();
             Reset();
         }
 
+        /// <summary>
+        /// Fonction pour remettre tous les elements de l'IHM par défaut
+        /// </summary>
         private void Reset()
         {
             textBox_Nom.Focus();
             radioButton_7.Checked = true;
-            label_NbDuree.Text = "1";
-            hScrollBar_Duree.Value = 1;
+            curLoan.Rate = Rate7;
             listBox_Periode.SelectedIndex = 0;
-            button_Ok.Enabled = false;
-            button_Annuler.Enabled = false;
-            HScollBarSetup(listBox_Periode.SelectedIndex);
+            textBox_Capital.Clear();
+            label_NbDuree.Text = "1";
         }
 
-        private void HScollBarSetup(int frequency)
+        /// <summary>
+        /// Ajuste la valeur de la scrollbar pour qu'elle corresponde à un multiple de la périodicité choisie.
+        /// </summary>
+        /// <param name="currentValue">La valeur actuelle de la scrollbar avant correction.</param>
+        /// <param name="step">Le pas (incrément) correspondant à la périodicité.</param>
+        /// <returns>Le multiple de la périodicité immédiatement inférieur ou égal à la valeur initiale.</returns>
+        private int SnapScrollBarValue(int currentValue, int step)
         {
-            if (frequency == 0)
+            if (currentValue % step != 0)
             {
-                hScrollBar_Duree.SmallChange = 1;
-                hScrollBar_Duree.LargeChange = 1;
-                hScrollBar_Duree.Maximum = 300;
+                return (currentValue / step) * step;
             }
-            else if (frequency == 1)
-            {
-                hScrollBar_Duree.SmallChange = 2;
-                hScrollBar_Duree.LargeChange = 2;
-                hScrollBar_Duree.Maximum = 301;
-            }
-            else if (frequency == 2)
-            {
-                hScrollBar_Duree.SmallChange = 3;
-                hScrollBar_Duree.LargeChange = 3;
-                hScrollBar_Duree.Maximum = 302;
-            }
-            else if (frequency == 3)
-            {
-                hScrollBar_Duree.SmallChange = 6;
-                hScrollBar_Duree.LargeChange = 6;
-                hScrollBar_Duree.Maximum = 305;
-            }
-            else if (frequency == 4)
-            {
-                hScrollBar_Duree.SmallChange = 12;
-                hScrollBar_Duree.LargeChange = 12;
-                hScrollBar_Duree.Maximum = 311;
-            }
+            return currentValue;
         }
 
+        /// <summary>
+        /// Configure les bornes (Minimum, Maximum) et le pas (LargeChange/SmallChange) de la barre de défilement
+        /// en fonction de la périodicité sélectionnée par l'utilisateur.
+        /// </summary>
+        /// <param name="frequencyIndex">
+        /// L'index de la périodicité sélectionnée dans la ListBox (0 pour Mensuelle, 1 pour Bimestrielle, etc.),
+        /// utilisé pour récupérer le pas correspondant dans le tableau frequencySteps.
+        /// </param>
+        /// <remarks>
+        /// Le Maximum est calculé dynamiquement (299 + step) pour garantir une amplitude de choix constante 
+        /// quelle que soit la périodicité.
+        /// </remarks>
+        private void HScollBarSetup(int frequencyIndex)
+        {
+            if (frequencyIndex < 0 || frequencyIndex >= frequencySteps.Length)
+            {
+                return;
+            }
+            int step = frequencySteps[frequencyIndex];
+            if (hScrollBar_Duree.Value < step)
+            {
+                hScrollBar_Duree.Value = step;
+            }
+            hScrollBar_Duree.Minimum = step;
+            hScrollBar_Duree.SmallChange = step;
+            hScrollBar_Duree.LargeChange = step;
+            hScrollBar_Duree.Maximum = 299 + step;
+        }
+
+        /// <summary>
+        /// Déclenche les calculs de l'emprunt via l'objet métier et met à jour l'affichage des résultats.
+        /// </summary>
+        /// <remarks>
+        /// Cette méthode vérifie d'abord si un capital (Amount) est défini dans l'objet Loan :
+        ///     Si oui : elle calcule le montant du remboursement (formaté en devise locale) et le nombre d'échéances.
+        ///     Si non (montant à 0) : elle vide les étiquettes pour garder l'interface propre.
+        /// </remarks>
         private void CalculateAndDisplay()
         {
-            label_Amount.Text = curLoan.CalcRemb().ToString("C", CultureInfo.CurrentCulture);
-            label_NbRemboursements.Text = (curLoan.Length / curLoan.Frequency).ToString();
+            if (curLoan.Amount > 0)
+            {
+                label_Amount.Text = curLoan.CalcRemb().ToString("C", CultureInfo.CurrentCulture);
+                label_NbRemboursements.Text = curLoan.NbRemb().ToString();
+            }
+            else
+            {
+                label_Amount.Text = "0,00 €";
+                label_NbRemboursements.Text = "0";
+            }
         }
 
 
         private void HScrollBar_Duree_ValueChanged(object sender, EventArgs e)
         {
-            //if (hScrollBar_Duree.Value < 2 && listBox_Periode.SelectedIndex == 1)
-            //{
-            //    errorProviderHsError.SetError(hScrollBar_Duree, "Pour une périodicité Bimestrielle, la durée du remboursement ne peut pas être inférieur à 2");
-            //}
-            //else if (hScrollBar_Duree.Value < 3 && listBox_Periode.SelectedIndex == 2)
-            //{
-            //    errorProviderHsError.SetError(hScrollBar_Duree, "Pour une périodicité Trimestrielle, la durée du remboursement ne peut pas être inférieur à 3");
-            //}
-            //else if (hScrollBar_Duree.Value < 6 && listBox_Periode.SelectedIndex == 3)
-            //{
-            //    errorProviderHsError.SetError(hScrollBar_Duree, "Pour une périodicité Semestrielle, la durée du remboursement ne peut pas être inférieur à 6");
-            //}
-            //else if (hScrollBar_Duree.Value < 12 && listBox_Periode.SelectedIndex == 4)
-            //{
-            //    errorProviderHsError.SetError(hScrollBar_Duree, "Pour une périodicité Annuelle, la durée du remboursement ne peut pas être inférieur à 12");
-            //}
-            //else
-            //{
-                errorProviderHsError.Clear();
-                label_NbDuree.Text = hScrollBar_Duree.Value.ToString();
-                curLoan.Length = hScrollBar_Duree.Value;
-                CalculateAndDisplay();
-            //}
+            label_NbDuree.Text = hScrollBar_Duree.Value.ToString();
+            curLoan.Length = hScrollBar_Duree.Value;
+            CalculateAndDisplay();
+        }
 
-
-
+        private void HScrollBar_Duree_Scroll(object sender, ScrollEventArgs e)
+        {
+            int currentStep = frequencySteps[listBox_Periode.SelectedIndex];
+            e.NewValue = SnapScrollBarValue(e.NewValue, currentStep);
         }
 
         private void ListBox_Periode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HScollBarSetup(listBox_Periode.SelectedIndex);
-            curLoan.Frequency = hScrollBar_Duree.SmallChange;
+            int index = listBox_Periode.SelectedIndex;
+            if (index == -1)
+            {
+                return;
+            }
+            HScollBarSetup(index);
+            int currentStep = frequencySteps[index];
+            curLoan.Frequency = currentStep;
+            hScrollBar_Duree.Value = SnapScrollBarValue(hScrollBar_Duree.Value, currentStep);
             CalculateAndDisplay();
         }
 
         private void RadioButtons_CheckedChanged(object sender, EventArgs e)
         {
-            if (((RadioButton)sender).Checked)
+            if (sender is RadioButton rb && rb.Checked)
             {
-                if (((RadioButton)sender) == radioButton_7)
-                {
-                    curLoan.Rate = Rate7;
-                }
-                else if (((RadioButton)sender) == radioButton_8)
-                {
-                    curLoan.Rate = Rate8;
-                }
-                else if (((RadioButton)sender) == radioButton_9)
-                {
-                    curLoan.Rate = Rate9;
-                }
+                if (rb == radioButton_7) curLoan.Rate = Rate7;
+                else if (rb == radioButton_8) curLoan.Rate = Rate8;
+                else if (rb == radioButton_9) curLoan.Rate = Rate9;
                 CalculateAndDisplay();
             }
         }
@@ -140,20 +149,18 @@ namespace WF_Emprunts
             if (string.IsNullOrWhiteSpace(textBox_Capital.Text))
             {
                 curLoan.Amount = 0;
+                errorProviderAmount.Clear();
+            }
+            else if (int.TryParse(textBox_Capital.Text, out int val))
+            {
+                curLoan.Amount = val;
+                errorProviderAmount.Clear();
             }
             else
             {
-                curLoan.Amount = int.Parse(textBox_Capital.Text);
+                errorProviderAmount.SetError(textBox_Capital, "Saisir un entier valide uniquement.");
             }
             CalculateAndDisplay();
-        }
-
-        private void HScrollBar_Duree_Scroll(object sender, ScrollEventArgs e)
-        {
-            if (e.NewValue > 1 && e.OldValue >=  2 && e.NewValue % 2 != 0)
-            {
-                e.NewValue = e.NewValue - 1;
-            }
         }
     }
 }

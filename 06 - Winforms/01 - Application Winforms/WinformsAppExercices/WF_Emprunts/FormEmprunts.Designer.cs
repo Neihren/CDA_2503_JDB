@@ -43,13 +43,11 @@
             radioButton_7 = new RadioButton();
             hScrollBar_Duree = new HScrollBar();
             label_NbDuree = new Label();
-            button_Ok = new Button();
-            button_Annuler = new Button();
             label_NbRemboursements = new Label();
             label_Amount = new Label();
-            errorProviderHsError = new ErrorProvider(components);
+            errorProviderAmount = new ErrorProvider(components);
             groupBox_Taux.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)errorProviderHsError).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderAmount).BeginInit();
             SuspendLayout();
             // 
             // label_Nom
@@ -96,7 +94,7 @@
             // 
             label_Remboursements.AutoSize = true;
             label_Remboursements.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_Remboursements.Location = new Point(388, 204);
+            label_Remboursements.Location = new Point(343, 204);
             label_Remboursements.Name = "label_Remboursements";
             label_Remboursements.Size = new Size(143, 21);
             label_Remboursements.TabIndex = 4;
@@ -154,6 +152,7 @@
             radioButton_9.TabStop = true;
             radioButton_9.Text = "9 %";
             radioButton_9.UseVisualStyleBackColor = true;
+            radioButton_9.CheckedChanged += RadioButtons_CheckedChanged;
             // 
             // radioButton_8
             // 
@@ -165,6 +164,7 @@
             radioButton_8.TabStop = true;
             radioButton_8.Text = "8 %";
             radioButton_8.UseVisualStyleBackColor = true;
+            radioButton_8.CheckedChanged += RadioButtons_CheckedChanged;
             // 
             // radioButton_7
             // 
@@ -176,6 +176,7 @@
             radioButton_7.TabStop = true;
             radioButton_7.Text = "7 %";
             radioButton_7.UseVisualStyleBackColor = true;
+            radioButton_7.CheckedChanged += RadioButtons_CheckedChanged;
             // 
             // hScrollBar_Duree
             // 
@@ -199,34 +200,12 @@
             label_NbDuree.TabIndex = 11;
             label_NbDuree.Text = "0";
             // 
-            // button_Ok
-            // 
-            button_Ok.DialogResult = DialogResult.OK;
-            button_Ok.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button_Ok.Location = new Point(566, 27);
-            button_Ok.Name = "button_Ok";
-            button_Ok.Size = new Size(113, 33);
-            button_Ok.TabIndex = 12;
-            button_Ok.Text = "OK";
-            button_Ok.UseVisualStyleBackColor = true;
-            // 
-            // button_Annuler
-            // 
-            button_Annuler.DialogResult = DialogResult.Cancel;
-            button_Annuler.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button_Annuler.Location = new Point(566, 72);
-            button_Annuler.Name = "button_Annuler";
-            button_Annuler.Size = new Size(113, 33);
-            button_Annuler.TabIndex = 13;
-            button_Annuler.Text = "Annuler";
-            button_Annuler.UseVisualStyleBackColor = true;
-            // 
             // label_NbRemboursements
             // 
             label_NbRemboursements.AutoSize = true;
             label_NbRemboursements.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_NbRemboursements.ForeColor = Color.Red;
-            label_NbRemboursements.Location = new Point(358, 204);
+            label_NbRemboursements.Location = new Point(302, 204);
             label_NbRemboursements.Name = "label_NbRemboursements";
             label_NbRemboursements.Size = new Size(19, 21);
             label_NbRemboursements.TabIndex = 14;
@@ -237,25 +216,23 @@
             label_Amount.AutoSize = true;
             label_Amount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_Amount.ForeColor = Color.Red;
-            label_Amount.Location = new Point(433, 255);
+            label_Amount.Location = new Point(375, 252);
             label_Amount.Name = "label_Amount";
             label_Amount.Size = new Size(53, 21);
             label_Amount.TabIndex = 15;
             label_Amount.Text = "0,00 €";
             // 
-            // errorProviderHsError
+            // errorProviderAmount
             // 
-            errorProviderHsError.ContainerControl = this;
+            errorProviderAmount.ContainerControl = this;
             // 
             // FormEmprunts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(691, 359);
+            ClientSize = new Size(548, 359);
             Controls.Add(label_Amount);
             Controls.Add(label_NbRemboursements);
-            Controls.Add(button_Annuler);
-            Controls.Add(button_Ok);
             Controls.Add(label_NbDuree);
             Controls.Add(hScrollBar_Duree);
             Controls.Add(groupBox_Taux);
@@ -272,7 +249,7 @@
             Text = "Form1";
             groupBox_Taux.ResumeLayout(false);
             groupBox_Taux.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)errorProviderHsError).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderAmount).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -293,10 +270,8 @@
         private RadioButton radioButton_8;
         private HScrollBar hScrollBar_Duree;
         private Label label_NbDuree;
-        private Button button_Ok;
-        private Button button_Annuler;
         private Label label_NbRemboursements;
         private Label label_Amount;
-        private ErrorProvider errorProviderHsError;
+        private ErrorProvider errorProviderAmount;
     }
 }
