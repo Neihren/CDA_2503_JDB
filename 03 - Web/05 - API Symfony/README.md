@@ -23,9 +23,9 @@ Les services Base de données et Serveur Web seront séparés dans des conteneur
 
 ### La configuration du serveur Web 
 
-Pour que Symfony fonctionne bien, nous devons configurer quelques éléments dans la cvonfiguration d'Apache.
+Pour que Symfony fonctionne bien, nous devons configurer quelques éléments dans la configuration d'Apache.
 
-Nous alons éditer l'hôte virtuel par défaut dans un fichier qu'il sera nécessaire de copier dans le conteneur à sa création :
+Nous allons éditer l'hôte virtuel par défaut dans un fichier qu'il sera nécessaire de copier dans le conteneur à sa création :
 
 - Le répertoire de travail de Apache pointe sur le dossier "public" de symfony. 
     - Le dossier "public" est le point d'entrée des applications Symfony.
