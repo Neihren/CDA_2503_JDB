@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\01_CA_Controles\01_CA_Controles.csproj" />
+    <ProjectReference Include="..\01_CL_Achat\01_CL_Achat.csproj" />
+    <ProjectReference Include="..\01_CL_RegleDeControle\01_CL_RegleDeControle.csproj" />
+    <ProjectReference Include="..\01_WF_ControlesEP\01_WF_ControlesEP.csproj" />
+    <ProjectReference Include="..\01_WF_Controles\01_WF_Controles.csproj" />
+    <ProjectReference Include="..\01_WF_Validation\01_WF_Validation.csproj" />
+    <ProjectReference Include="..\CL_Item\CL_Item.csproj" />
+    <ProjectReference Include="..\CL_Loan\CL_Loan.csproj" />
+    <ProjectReference Include="..\CL_Pays\CL_Pays.csproj" />
+    <ProjectReference Include="..\WF_Additionneur\00_WF_Additionneur.csproj" />
+    <ProjectReference Include="..\WF_CheckBoxEtRadioButton\WF_CheckBoxEtRadioButton.csproj" />
+    <ProjectReference Include="..\WF_Defilement\WF_Defilement.csproj" />
+    <ProjectReference Include="..\WF_Emprunts\WF_Emprunts.csproj" />
+    <ProjectReference Include="..\WF_ListeCombo\WF_ListeCombo.csproj" />
+    <ProjectReference Include="..\WF_Liste\WF_Liste.csproj" />
+    <ProjectReference Include="..\WF_MDI\WF_MDI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

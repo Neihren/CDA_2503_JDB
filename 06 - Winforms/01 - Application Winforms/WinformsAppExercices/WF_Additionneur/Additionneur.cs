@@ -5,10 +5,14 @@ namespace WF_Additionneur
     public partial class Additionneur : Form
     {
         private int sum;
+        private static int compteur = 0;
+
         public Additionneur()
         {
             InitializeComponent();
             this.sum = 0;
+            compteur++;
+            this.Text = "Additionneur N°" + compteur;
         }
         /// <summary>
         /// Methode ayant en paramètre le bouton cliqué pour ajouter le chiffre correspondant au bouton
