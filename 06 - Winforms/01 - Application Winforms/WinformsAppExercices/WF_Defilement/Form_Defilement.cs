@@ -5,6 +5,7 @@ namespace WF_Defilement
 
         Color couleurConfigure;
         Color couleurInitiale;
+        private static int compteur = 0;
 
         public Color CouleurConfigure { get => couleurConfigure; }
 
@@ -15,6 +16,8 @@ namespace WF_Defilement
         public Form_Defilement(Color colorAModifier)
         {
             InitializeComponent();
+            compteur++;
+            this.Text = "Defilement N°" + compteur;
             couleurInitiale = colorAModifier;
             couleurConfigure = colorAModifier;
             UpdateView();

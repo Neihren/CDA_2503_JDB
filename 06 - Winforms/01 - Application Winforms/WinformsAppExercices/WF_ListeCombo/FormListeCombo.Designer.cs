@@ -169,6 +169,7 @@
             Controls.Add(label_Source);
             Controls.Add(listBox_Cible);
             Controls.Add(comboBox_Source);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "FormListeCombo";
             StartPosition = FormStartPosition.CenterScreen;

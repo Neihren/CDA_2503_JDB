@@ -2,9 +2,24 @@ namespace WF_CheckBoxEtRadioButton
 {
     public partial class Form_CBRB : Form
     {
+        private static int compteur = 0;
+        //private string input;
+
+        //public string Input { get => input; set => input = value; }
+
         public Form_CBRB()
         {
             InitializeComponent();
+            compteur++;
+            this.Text = "CheckBox et RadioButton N°" + compteur;
+        }
+
+
+
+        public Form_CBRB(string text) : this()
+        {
+            label_Result.Text = text;
+            textBox_input.Text = text;
         }
 
         private void TextBox_input_TextChanged(object sender, EventArgs e)

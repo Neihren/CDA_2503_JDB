@@ -9,12 +9,15 @@ namespace WF_Emprunts
         private const Double Rate7 = 0.07;
         private const Double Rate8 = 0.08;
         private const Double Rate9 = 0.09;
+        private static int compteur = 0;
 
         private readonly int[] frequencySteps = { 1, 2, 3, 6, 12 };
 
         public FormEmprunts()
         {
             InitializeComponent();
+            compteur++;
+            this.Text = "Emprunts N°" + compteur;
             listBox_Periode.Items.AddRange(new object[] {
                 "Mensuelle",
                 "Bimestrielle",

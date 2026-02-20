@@ -244,6 +244,7 @@
             Controls.Add(label_Duree);
             Controls.Add(label_Capital);
             Controls.Add(label_Nom);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormEmprunts";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";

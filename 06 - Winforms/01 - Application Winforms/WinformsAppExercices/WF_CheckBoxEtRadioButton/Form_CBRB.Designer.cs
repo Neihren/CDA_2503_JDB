@@ -276,6 +276,7 @@
             Controls.Add(groupBox_Choice);
             Controls.Add(label_Instruction);
             Controls.Add(textBox_input);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "Form_CBRB";
             StartPosition = FormStartPosition.CenterScreen;

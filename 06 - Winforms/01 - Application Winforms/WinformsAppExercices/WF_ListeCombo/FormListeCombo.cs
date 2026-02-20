@@ -16,15 +16,17 @@ namespace WF_ListeCombo
     {
         private readonly List<Pays> listePaysSource;
         private readonly List<Pays> listePaysCible;
+        private static int compteur = 0;
 
         public FormListeCombo()
         {
             InitializeComponent();
+            compteur++;
+            this.Text = "Les listes N°" + compteur;
             listePaysSource = [new Pays("France"), new Pays("Belgique"), new Pays("Allemagne"), new Pays("Japon"), new Pays("Portugal"), new Pays("Grèce")];
             ComboBoxRefesh();
             listePaysCible = [new Pays("Bulgarie"), new Pays("Espagne")];
             ListBoxRefesh();
-
         }
 
         private void ComboBoxRefesh()

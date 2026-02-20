@@ -219,6 +219,7 @@
             Controls.Add(label_Blue);
             Controls.Add(label_Green);
             Controls.Add(label_Red);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form_Defilement";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";

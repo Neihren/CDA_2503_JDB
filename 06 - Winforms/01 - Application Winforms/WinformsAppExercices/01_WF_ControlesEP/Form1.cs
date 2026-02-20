@@ -7,11 +7,15 @@ namespace _01_WF_ControlesEP
 {
     public partial class Form1 : Form
     {
+        private static int compteur = 0;
+
         private DateTime dateValidee;
         private decimal montantValide;
         public Form1()
         {
             InitializeComponent();
+            compteur++;
+            this.Text = "Les contrôles N°" + compteur;
         }
 
         protected override void WndProc(ref Message m)
@@ -92,27 +96,22 @@ namespace _01_WF_ControlesEP
             {
                 if (BoiteAOutilDeRegles.IsStartingSpace(textBox_Date.Text))
                 {
-                    e.Cancel = true;
                     errorProviderDate.SetError(textBox_Date, "Il ne doit pas y avoir d'espaces avant la date");
                 }
                 else if (BoiteAOutilDeRegles.IsEndingSpace(textBox_Date.Text))
                 {
-                    e.Cancel = true;
                     errorProviderDate.SetError(textBox_Date, "Pas d'espace après la date");
                 }
                 else if (BoiteAOutilDeRegles.IsEmpty(textBox_Date.Text))
                 {
-                    e.Cancel = true;
                     errorProviderDate.SetError(textBox_Date, "Vous devez renseigner une date");
                 }
                 else if (!BoiteAOutilDeRegles.IsDateFormatValid(textBox_Date.Text, out dateValidee))
                 {
-                    e.Cancel = true;
                     errorProviderDate.SetError(textBox_Date, "Vous devez renseigner une date valide");
                 }
                 else if (BoiteAOutilDeRegles.IsDateInPast(dateValidee))
                 {
-                    e.Cancel = true;
                     errorProviderDate.SetError(textBox_Date, "La date ne doit pas être dans le passé");
                 }
                 else
@@ -122,7 +121,6 @@ namespace _01_WF_ControlesEP
             }
             catch
             {
-                e.Cancel = true;
                 errorProviderDate.SetError(textBox_Date, "Saisie invalide");
             }
         }
@@ -224,6 +222,19 @@ namespace _01_WF_ControlesEP
                 MessageBox.Show("Veuillez corriger les erreurs sur le formulaire.", "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        //private void AfficherErreur(Control controle, ErrorProvider provider, string messageErreur, CancelEventArgs e)
+        //{
+        //    if (!string.IsNullOrEmpty(messageErreur))
+        //    {
+        //        e.Cancel = true;
+        //        provider.SetError(controle, messageErreur);
+        //    }
+        //    else
+        //    {
+        //        provider.SetError(controle, string.Empty); // Efface l'erreur si tout est valide
+        //    }
+        //}
     }
 }
 
