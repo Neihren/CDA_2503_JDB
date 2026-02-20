@@ -13,8 +13,15 @@
             this.niveauFormationMax = niveauFormationMax;
         }
 
-        public string Nom { get => nom; set => nom = value; }
-        public DateOnly DateInsciption { get => dateInsciption; set => dateInsciption = value; }
-        public EnumNiveauFormation NiveauFormationMax { get => niveauFormationMax; set => niveauFormationMax = value; }
+        public DemandeurEmploi(DemandeurEmploi demandeur)
+        {
+            this.nom = demandeur.Nom;
+            this.dateInsciption = demandeur.DateInsciption;
+            this.niveauFormationMax = demandeur.NiveauFormationMax;
+        }
+
+        public string Nom { get => nom; /*set => nom = value;*/ }
+        public DateOnly DateInsciption { get => dateInsciption; /*set => dateInsciption = value;*/ }
+        public EnumNiveauFormation NiveauFormationMax { get => niveauFormationMax; /*set => niveauFormationMax = value;*/ }
     }
 }
