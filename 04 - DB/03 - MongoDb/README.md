@@ -1,0 +1,38 @@
+# Docker Mongo DB
+
+## Docker Compose
+```yml
+name: achat-mongodb
+services:
+  db:
+    image: mongodb/mongodb-community-server:8.2.5-ubuntu2204
+    container_name: MongoDB-Achat
+    environment:
+    #  - MONGODB_INITDB_ROOT_USERNAME=admin
+    #  - MONGODB_INITDB_ROOT_PASSWORD=1234
+      - MONGO_INITDB_DATABASE=Achat
+    volumes:
+      - Achatdb:/data/db
+      - Achatdbconfigdb:/data/configdb
+    ports:
+      - "9002:27017"
+
+volumes:
+  Achatdb:
+  Achatdbconfigdb:
+```
+
+## Création du container
+```bash
+docker compose up --build -d
+```
+
+## Execution du container
+```bash
+docker exec -it MongoDB-Achat bash
+```
+
+## Connection a MongoDB
+```bash
+mongosh -u admin -p '1234'
+```
