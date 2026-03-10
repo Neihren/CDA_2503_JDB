@@ -21,7 +21,7 @@ namespace WF_TrouveEmploi
         /// <param name="demandeurAModifier"> Information initiales</param>
         public Form_TrouveEmploi(DemandeurEmploi demandeurAModifier)
         {
-            InitializeComponent();
+            //InitializeComponent();
             demandeurValeursInitials = new DemandeurEmploi(demandeurAModifier);
             demandeurModifie = new DemandeurEmploi(demandeurAModifier);
             InitialisationDemandeur();
